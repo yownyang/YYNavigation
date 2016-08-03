@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BCFC3C8D964D2BE6B16DD512C56358B50DC44047",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BCFC3C8D964D2BE6B16DD512C56358B50DC44047" : 0,
+    "E963F7311DCE4E17B96CB0A197414320A64A808D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "C31E532C-1415-4784-8372-92214CBA48C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BCFC3C8D964D2BE6B16DD512C56358B50DC44047" : "YYNavigationBar\/",
+    "E963F7311DCE4E17B96CB0A197414320A64A808D" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "YYNavigationBarExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "YYNavigationBarExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jizhidejingmo\/YYNavigationBar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BCFC3C8D964D2BE6B16DD512C56358B50DC44047"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jizhidejingmo\/My-Demo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E963F7311DCE4E17B96CB0A197414320A64A808D"
+    }
+  ]
+}
