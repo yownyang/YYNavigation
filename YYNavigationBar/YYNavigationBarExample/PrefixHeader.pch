@@ -1,0 +1,19 @@
+//
+//  PrefixHeader.pch
+//  YYNavigationBar
+//
+//  Created by yangyang on 16/7/29.
+//  Copyright © 2016年 机智的静默( http://www.cnblogs.com/jingmo/ ). All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 宏定义
+#import "PCHDefine.h"
+
+// 头文件
+#import "PCHHeader.h"
+
+
+#endif /* PrefixHeader_pch */
