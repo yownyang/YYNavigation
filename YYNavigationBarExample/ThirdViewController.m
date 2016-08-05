@@ -18,6 +18,8 @@
     
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor grayColor];
+    
 //    self.navigationController.naviBar.isHiddenNavi = YES;
     
 //    YYBarButton *back = [YYBarButton createButtonWithSize:CGSizeZero image:@"back" handler:^(UIButton *sender){
@@ -33,6 +35,12 @@
     }];
     
     self.navigationController.naviItem.leftButtons = @[back1];
+    
+    self.navigationController.naviItem.title = @"ThirdVC";
+    
+    self.navigationController.naviBar.naviSuperAlpha = 0.0;
+    
+    self.navigationController.naviItem.textColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {

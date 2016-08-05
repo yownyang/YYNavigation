@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     self.navigationController.naviItem.title = @"首页";
-    
+        
     YYBarButton *b1 = [YYBarButton createButtonWithSize:CGSizeZero title:@"左按钮1" handler:^(UIButton *sender) {
         
         NSLog(@"左按钮1");

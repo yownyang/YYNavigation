@@ -73,6 +73,15 @@
     self.alpha = naviAlpha;
 }
 
+- (void)setNaviSuperAlpha:(CGFloat)naviSuperAlpha {
+    
+    _naviSuperAlpha = naviSuperAlpha;
+    
+    self.backgroundColor = [self.backgroundColor colorWithAlphaComponent:_naviSuperAlpha];
+    
+    _navigationItem.backgroundColor = [_navigationItem.backgroundColor colorWithAlphaComponent:_naviSuperAlpha];
+}
+
 #pragma mark getter方法
 - (YYNavigationItem *)navigationItem {
     

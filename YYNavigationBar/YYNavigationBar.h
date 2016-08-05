@@ -20,6 +20,9 @@
 // 设置NavigationBar的透明度(默认1.0)
 @property (nonatomic, assign) CGFloat naviAlpha;
 
+// 设置NavigationBar不影响子视图显示的透明度
+@property (nonatomic, assign) CGFloat naviSuperAlpha;
+
 // 用于加载视图等控件
 @property (nonatomic, strong) YYNavigationItem *navigationItem;
 

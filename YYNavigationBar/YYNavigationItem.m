@@ -157,6 +157,8 @@
         [_backButton removeFromSuperview];
     }
     
+    _leftButtons = leftButtons;
+    
     [leftButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         [obj setFrame:CGRectMake(_leftButtonsX, 0, obj.width, ButtonsHeight)];
@@ -180,6 +182,8 @@
 }
 
 - (void)setRightButtons:(NSArray<UIButton *> *)rightButtons {
+    
+    _rightButtons = rightButtons;
     
     [rightButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
