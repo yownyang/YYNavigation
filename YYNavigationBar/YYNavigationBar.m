@@ -62,8 +62,6 @@
     _naviBgColor = naviBgColor;
     
     self.backgroundColor = naviBgColor;
-    
-    _navigationItem.backgroundColor = naviBgColor;
 }
 
 - (void)setNaviAlpha:(CGFloat)naviAlpha {
@@ -78,8 +76,6 @@
     _naviSuperAlpha = naviSuperAlpha;
     
     self.backgroundColor = [self.backgroundColor colorWithAlphaComponent:_naviSuperAlpha];
-    
-    _navigationItem.backgroundColor = [_navigationItem.backgroundColor colorWithAlphaComponent:_naviSuperAlpha];
 }
 
 #pragma mark getter方法
@@ -88,8 +84,6 @@
     if (!_navigationItem) {
         
         _navigationItem = [[YYNavigationItem alloc]initWithViewArrays:_viewArrays];
-        
-        _navigationItem.backgroundColor = self.backgroundColor;
     }
     
     return _navigationItem;

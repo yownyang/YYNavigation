@@ -47,7 +47,7 @@
     if (self) {
         
         [self setFrame:CGRectMake(0, StatusBarHeight, View_Width, NavBarHeight)];
-        
+                
         _viewArrays = [NSArray arrayWithArray:viewArrays];
         
         _leftButtonsX = Space;
