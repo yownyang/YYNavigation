@@ -1,4 +1,5 @@
 # YYNavigationBar
+# 联系方式QQ：990192315
 
 Version --- 1.0.0
 1、实现了自定义NavigationBar
@@ -12,3 +13,7 @@ Version --- 1.0.1
 
 Version --- 1.0.2
 1.修复了在渐变naviBar透明度时，naviBar与naviItem的颜色问题
+
+Version --- 1.0.3
+1.修改了naviBar、naviItem的调用方式,使用更加方便快捷
+2.修复了一个某些情况下才会出现的bug

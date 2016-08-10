@@ -16,8 +16,8 @@
 // 基本封装
 #import "UIView+Other.h"
 #import "YYBarButton.h"
-#import "RootVC.h"
-#import "RootNavigationVC.h"
+#import "UIViewController+Other.h"
 
+#import "RootVC.h"
 
 #endif

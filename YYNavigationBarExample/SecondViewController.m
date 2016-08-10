@@ -21,7 +21,7 @@
     
     searchBar.barTintColor = [UIColor darkGrayColor];
     
-    self.navigationController.naviItem.titleView = searchBar;
+    self.naviItem.titleView = searchBar;
 }
 
 @end

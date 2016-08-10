@@ -7,17 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YYNavigationBar.h"
-#import "YYNavigationItem.h"
 
 @interface RootNavigationVC : UINavigationController
-
-@end
-
-@interface UINavigationController (Other)
-
-@property (nonatomic, strong) YYNavigationBar *naviBar;
-
-@property (nonatomic, strong) YYNavigationItem *naviItem;
 
 @end

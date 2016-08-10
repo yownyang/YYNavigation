@@ -20,6 +20,9 @@
 		DD1847AF1D51C78600E1C1FA /* YYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1847A81D51C78600E1C1FA /* YYNavigationBar.m */; };
 		DD1847B01D51C78600E1C1FA /* YYNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1847AA1D51C78600E1C1FA /* YYNavigationItem.m */; };
 		DD1847B31D51C8AB00E1C1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1847B11D51C8AB00E1C1FA /* Main.storyboard */; };
+		DDB55BA21D5AD2CD00B70890 /* OtherFirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB55BA11D5AD2CD00B70890 /* OtherFirstVC.m */; };
+		DDB55BA51D5AD2E400B70890 /* OtherSecondVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB55BA41D5AD2E400B70890 /* OtherSecondVC.m */; };
+		DDB55BA81D5ADCD300B70890 /* UIViewController+Other.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB55BA71D5ADCD300B70890 /* UIViewController+Other.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,12 @@
 		DD1847A91D51C78600E1C1FA /* YYNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationItem.h; sourceTree = "<group>"; };
 		DD1847AA1D51C78600E1C1FA /* YYNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationItem.m; sourceTree = "<group>"; };
 		DD1847B21D51C8AB00E1C1FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDB55BA01D5AD2CD00B70890 /* OtherFirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherFirstVC.h; sourceTree = "<group>"; };
+		DDB55BA11D5AD2CD00B70890 /* OtherFirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherFirstVC.m; sourceTree = "<group>"; };
+		DDB55BA31D5AD2E400B70890 /* OtherSecondVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherSecondVC.h; sourceTree = "<group>"; };
+		DDB55BA41D5AD2E400B70890 /* OtherSecondVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherSecondVC.m; sourceTree = "<group>"; };
+		DDB55BA61D5ADCD300B70890 /* UIViewController+Other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Other.h"; sourceTree = "<group>"; };
+		DDB55BA71D5ADCD300B70890 /* UIViewController+Other.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Other.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +103,10 @@
 				DD1847961D51C74800E1C1FA /* SecondViewController.m */,
 				DD1847971D51C74800E1C1FA /* ThirdViewController.h */,
 				DD1847981D51C74800E1C1FA /* ThirdViewController.m */,
+				DDB55BA01D5AD2CD00B70890 /* OtherFirstVC.h */,
+				DDB55BA11D5AD2CD00B70890 /* OtherFirstVC.m */,
+				DDB55BA31D5AD2E400B70890 /* OtherSecondVC.h */,
+				DDB55BA41D5AD2E400B70890 /* OtherSecondVC.m */,
 				DD1847B11D51C8AB00E1C1FA /* Main.storyboard */,
 				DD1847831D51C61A00E1C1FA /* Assets.xcassets */,
 				DD1847741D51C61A00E1C1FA /* Supporting Files */,
@@ -143,6 +156,8 @@
 				DD1847A81D51C78600E1C1FA /* YYNavigationBar.m */,
 				DD1847A91D51C78600E1C1FA /* YYNavigationItem.h */,
 				DD1847AA1D51C78600E1C1FA /* YYNavigationItem.m */,
+				DDB55BA61D5ADCD300B70890 /* UIViewController+Other.h */,
+				DDB55BA71D5ADCD300B70890 /* UIViewController+Other.m */,
 			);
 			path = YYNavigationBar;
 			sourceTree = SOURCE_ROOT;
@@ -219,8 +234,11 @@
 				DD1847AC1D51C78600E1C1FA /* RootVC.m in Sources */,
 				DD18479A1D51C74800E1C1FA /* SecondViewController.m in Sources */,
 				DD18479B1D51C74800E1C1FA /* ThirdViewController.m in Sources */,
+				DDB55BA81D5ADCD300B70890 /* UIViewController+Other.m in Sources */,
 				DD1847791D51C61A00E1C1FA /* AppDelegate.m in Sources */,
+				DDB55BA21D5AD2CD00B70890 /* OtherFirstVC.m in Sources */,
 				DD1847991D51C74800E1C1FA /* FirstViewController.m in Sources */,
+				DDB55BA51D5AD2E400B70890 /* OtherSecondVC.m in Sources */,
 				DD1847AB1D51C78600E1C1FA /* RootNavigationVC.m in Sources */,
 				DD1847761D51C61A00E1C1FA /* main.m in Sources */,
 				DD1847AF1D51C78600E1C1FA /* YYNavigationBar.m in Sources */,

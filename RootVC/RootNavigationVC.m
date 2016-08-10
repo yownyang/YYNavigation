@@ -7,7 +7,6 @@
 //
 
 #import "RootNavigationVC.h"
-#import <objc/runtime.h>
 
 @implementation RootNavigationVC
 
@@ -20,6 +19,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
+//    这个用于拥有tabbar时的跳转隐藏tabbar，跟自定义naviBar无关
     if (self.viewControllers.count > 0) {
         
         viewController.hidesBottomBarWhenPushed = YES;
@@ -28,28 +28,4 @@
     [super pushViewController:viewController animated:animated];
 }
 
-@end
-
-
-@implementation UINavigationController (Other)
-
-- (void)setNaviBar:(YYNavigationBar *)naviBar {
-    
-    objc_setAssociatedObject(self, @"NaviBar", naviBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (YYNavigationBar *)naviBar {
-    
-    return objc_getAssociatedObject(self, @"NaviBar");
-}
-
-- (void)setNaviItem:(YYNavigationItem *)naviItem {
-    
-    objc_setAssociatedObject(self, @"NaviItem", naviItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (YYNavigationItem *)naviItem {
-    
-    return objc_getAssociatedObject(self, @"NaviItem");
-}
 @end

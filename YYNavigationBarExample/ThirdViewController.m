@@ -30,17 +30,16 @@
     
     YYBarButton *back1 = [YYBarButton createButtonWithSize:CGSizeZero image:@"back" title:@"返回" handler:^(UIButton *sender) {
       
-        NSLog(@"back1");
         [self.navigationController popViewControllerAnimated:YES];
     }];
     
-    self.navigationController.naviItem.leftButtons = @[back1];
+    self.naviItem.leftButtons = @[back1];
     
-    self.navigationController.naviItem.title = @"ThirdVC";
+    self.naviItem.title = @"ThirdVC";
     
-    self.navigationController.naviBar.naviSuperAlpha = 0.0;
+    self.naviBar.naviSuperAlpha = 0.0;
     
-    self.navigationController.naviItem.textColor = [UIColor blackColor];
+    self.naviItem.textColor = [UIColor blackColor];
 }
 
 - (void)didReceiveMemoryWarning {

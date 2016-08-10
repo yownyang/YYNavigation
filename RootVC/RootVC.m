@@ -7,7 +7,6 @@
 //
 
 #import "RootVC.h"
-#import "YYNavigationBar.h"
 
 @interface RootVC ()
 
@@ -21,8 +20,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.navigationController.naviBar = [[YYNavigationBar alloc]initWithViewArrays:self.navigationController.viewControllers];
+        
+    self.naviBar = [YYNavigationBar initWithViewArrays:self.navigationController.viewControllers];
 }
 
 @end

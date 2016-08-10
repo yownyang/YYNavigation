@@ -41,9 +41,11 @@
         
         [self addSubview:self.navigationItem];
         
-        [[viewArrays lastObject] navigationController].naviItem = self.navigationItem;
+        UIViewController *lastVC = [viewArrays lastObject];
         
-        [[[viewArrays lastObject] view]addSubview:self];
+        lastVC.naviItem = self.navigationItem;
+        
+        [lastVC.view addSubview:self];
     }
     
     return self;
@@ -83,7 +85,7 @@
     
     if (!_navigationItem) {
         
-        _navigationItem = [[YYNavigationItem alloc]initWithViewArrays:_viewArrays];
+        _navigationItem = [YYNavigationItem initWithViewArrays:_viewArrays];
     }
     
     return _navigationItem;
