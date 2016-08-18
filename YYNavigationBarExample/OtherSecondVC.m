@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     self.naviItem.title = @"另一个视图---2";
+    self.naviItem.title = @"另一个视图---2";
+    
+    self.naviItem.backButton = [YYBarButton createButtonWithSize:CGSizeZero image:@"back" title:@"返回" handler:^(UIButton *sender) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

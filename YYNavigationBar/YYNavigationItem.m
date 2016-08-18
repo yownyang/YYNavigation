@@ -24,6 +24,9 @@
     
 //    分割线
     UIImageView *_separatorLine;
+    
+//    返回按钮
+    UIButton *_backButton;
 }
 // 文本标题
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -54,9 +57,20 @@
         
         _rightButtonsX = 0;
         
+        
+        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [_backButton setFrame:CGRectMake(Space, 0, ButtonsHeight, ButtonsHeight)];
+        
+        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        
+        [_backButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
+        
+        _backButton.centerY = self.height / 2;
+        
         if (_viewArrays.count > 1) {
             
-            [self addSubview:self.backButton];
+            [self addSubview:_backButton];
         }
         
         _separatorLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, NavBarHeight - 1, View_Width, 1)];
@@ -161,7 +175,7 @@
     
     [leftButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        [obj setFrame:CGRectMake(_leftButtonsX, 0, obj.width, ButtonsHeight)];
+        [obj setFrame:CGRectMake(_leftButtonsX, 0, obj.width, obj.height)];
         
         float tempX = obj.width + Space;
         
@@ -191,7 +205,7 @@
         
         _rightButtonsX = _rightButtonsX + tempX;
         
-        [obj setFrame:CGRectMake(View_Width - _rightButtonsX, 0, obj.width, ButtonsHeight)];
+        [obj setFrame:CGRectMake(View_Width - _rightButtonsX, 0, obj.width, obj.height)];
         
         if (_textColor) {
             
@@ -207,23 +221,15 @@
     }];
 }
 
+- (void)setBackButton:(UIButton *)backButton {
+    
+    _backButton = backButton;
+}
+
 #pragma mark getter方法---初始化控件
 - (UIButton *)backButton {
     
-    if (!_backButton) {
-        
-        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        [_backButton setFrame:CGRectMake(Space, 0, ButtonsHeight, ButtonsHeight)];
-        
-        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-        
-        [_backButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
-        
-        _backButton.centerY = self.height / 2;
-    }
-    
-    return _backButton;
+    return self.backButton;
 }
 
 - (UILabel *)titleLabel {
