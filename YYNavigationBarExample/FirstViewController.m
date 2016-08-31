@@ -17,6 +17,9 @@
 
 @implementation FirstViewController
 
+#warning 如果你的ViewController不是继承与RootVC，那么需要你在每个ViewController中写上这么一句话self.naviBar = [YYNavigationBar initWithViewArrays:self.navigationController.viewControllers];
+
+
 - (void)viewDidLoad {
 
     [super viewDidLoad];
