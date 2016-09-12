@@ -21,3 +21,6 @@ Version --- 1.0.3
 Version --- 1.0.4
 1.现在可以直接设置backButton了；
 2.修复了使用图片不为22大小时，图片产生变形的问题
+
+Version --- 1.0.5
+1.修复了当你添加view后，可能会覆盖navibar的BUG。

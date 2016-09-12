@@ -24,4 +24,11 @@
     self.naviBar = [YYNavigationBar initWithViewArrays:self.navigationController.viewControllers];
 }
 
+- (void)viewDidLayoutSubviews {
+    
+    [super viewDidLayoutSubviews];
+        
+    [self.view bringSubviewToFront:self.naviBar];
+}
+
 @end
