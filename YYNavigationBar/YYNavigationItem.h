@@ -16,8 +16,11 @@
 // 自定义标题(默认为空)
 @property (nonatomic, strong) UIView *titleView;
 
-// 返回按钮(默认隐藏)
+// 返回按钮(第一个界面隐藏)
 @property (nonatomic, strong) UIButton *backButton;
+
+// 设置返回按钮是否隐藏
+@property (nonatomic, assign) BOOL isBackButtonHidden;
 
 // 所有本界面之后的文本的颜色(自定义除外)
 @property (nonatomic, strong) UIColor *textColor;

@@ -30,13 +30,7 @@
         
     YYBarButton *b1 = [YYBarButton createButtonWithSize:CGSizeZero title:@"左按钮1" handler:^(UIButton *sender) {
         
-        UIView *view1  = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 414, 70)];
-        
-        view1.backgroundColor = [UIColor whiteColor];
-        
-        [self.view addSubview:view1];
-
-        NSLog(@"点击这个按钮测试navibar是否被覆盖");
+        NSLog(@"左按钮1");
     }];
     
     YYBarButton *b2 = [YYBarButton createButtonWithSize:CGSizeZero title:@"左按钮2" handler:^(UIButton *sender) {

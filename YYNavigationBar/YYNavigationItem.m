@@ -57,20 +57,9 @@
         
         _rightButtonsX = 0;
         
-        
-        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        
-        [_backButton setFrame:CGRectMake(Space, 0, ButtonsHeight, ButtonsHeight)];
-        
-        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-        
-        [_backButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
-        
-        _backButton.centerY = self.height / 2;
-        
         if (_viewArrays.count > 1) {
             
-            [self addSubview:_backButton];
+            [self addSubview:self.backButton];
         }
         
         _separatorLine = [[UIImageView alloc]initWithFrame:CGRectMake(0, NavBarHeight - 1, View_Width, 1)];
@@ -223,13 +212,65 @@
 
 - (void)setBackButton:(UIButton *)backButton {
     
-    _backButton = backButton;
+    if (backButton) {
+        
+        [_backButton removeFromSuperview];
+        
+        _backButton = backButton;
+        
+        [self addSubview:_backButton];
+    }else {
+        
+        [_backButton removeFromSuperview];
+        
+        _backButton = nil;
+    }
+    
+    if (_titleView && _backButton) {
+        
+        float X = Space * 2 + _backButton.width;
+        
+        [_titleView setFrame:CGRectMake(X, 0, View_Width - X, _titleView.height)];
+    }else {
+        
+        [_titleView setFrame:CGRectMake(0, 0, View_Width, _titleView.height)];
+    }
+}
+
+- (void)setIsBackButtonHidden:(BOOL)isBackButtonHidden {
+    
+    _isBackButtonHidden = isBackButtonHidden;
+    
+    _backButton.hidden = isBackButtonHidden;
+    
+    if (isBackButtonHidden == YES) {
+        
+        [_titleView setFrame:CGRectMake(0, 0, View_Width, _titleView.height)];
+    }else {
+        
+        float X = Space * 2 + _backButton.width;
+        
+        [_titleView setFrame:CGRectMake(X, 0, View_Width - X, _titleView.height)];
+    }
 }
 
 #pragma mark getter方法---初始化控件
 - (UIButton *)backButton {
     
-    return self.backButton;
+    if (!_backButton) {
+        
+        _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [_backButton setFrame:CGRectMake(Space, 0, ButtonsHeight, ButtonsHeight)];
+        
+        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+        
+        [_backButton addTarget:self action:@selector(pop) forControlEvents:UIControlEventTouchUpInside];
+        
+        _backButton.centerY = self.height / 2;
+    }
+
+    return _backButton;
 }
 
 - (UILabel *)titleLabel {

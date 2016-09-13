@@ -24,3 +24,7 @@ Version --- 1.0.4
 
 Version --- 1.0.5
 1.修复了当你添加view后，可能会覆盖navibar的BUG。
+
+Version --- 1.0.6
+1.在YYNavigationItem添加了isBackButtonHidden属性，可用于设置当前界面返回按钮是否隐藏
+2.修复了在重新设置了返回按钮大小后，同时存在的titleview的位置问题。
