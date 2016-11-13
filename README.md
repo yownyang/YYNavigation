@@ -1,4 +1,4 @@
-# YYNavigationBar
+# YYNavigation
 # 联系方式QQ：990192315
 
 Version --- 1.0.0
@@ -28,3 +28,9 @@ Version --- 1.0.5
 Version --- 1.0.6
 1.在YYNavigationItem添加了isBackButtonHidden属性，可用于设置当前界面返回按钮是否隐藏
 2.修复了在重新设置了返回按钮大小后，同时存在的titleview的位置问题。
+
+Version --- 2.0.0
+1、大改进大改进大改进，重要的事情说三遍
+2、只需使用YYNavigationController去初始化RootViewController即可，一行代码搞定所有。(无论纯代码/storyboard/xib都无需设置系统navigationController任何属性)
+3、实例demo更新，功能分界面展示，清晰易懂
+4、修复一大堆之前遗留BUG
