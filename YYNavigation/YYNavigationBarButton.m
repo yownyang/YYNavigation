@@ -16,7 +16,8 @@
 
 @implementation YYNavigationBarButton
 
-#pragma mark 初始化
+#pragma mark - Init
+
 + (instancetype)createButtonWithSize:(CGSize)size title:(NSString *)title handler:(YYNavigationBarButtonTapHandler)handler {
     
     NSAssert(title != nil, @"文字不能为空");

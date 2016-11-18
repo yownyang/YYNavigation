@@ -12,16 +12,16 @@
 @interface YYNavigationBar : UIView
 
 // 是否隐藏自定义NavigationBar(默认显示)
-@property (nonatomic, assign) BOOL isHiddenNaviBar;
+@property (nonatomic) BOOL isHiddenNaviBar;
 
 // 设置当前界面以及新生成界面NavigationBar的背景色(默认黑灰色, 建议在viewWillAppear/viewWillDidAppear中设置)
 @property (nonatomic) UIColor *naviBgColor;
 
 // 设置NavigationBar的透明度(默认1.0)
-@property (nonatomic, assign) CGFloat naviAlpha;
+@property (nonatomic) CGFloat naviAlpha;
 
 // 设置NavigationBar不影响子视图显示的透明度(默认1.0)
-@property (nonatomic, assign) CGFloat naviSuperAlpha;
+@property (nonatomic) CGFloat naviSuperAlpha;
 
 // 用于加载视图等控件
 @property (nonatomic, readonly) YYNavigationItem *naviItem;

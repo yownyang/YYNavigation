@@ -16,5 +16,6 @@
 #import "YYNavigationBarButton.h"
 #import "UIViewController+YYNavigationView.h"
 #import "UIView+YYNavigationFrame.h"
+#import "YYNavigationPopAnimation.h"
 
 #endif /* YYNavigation_h */

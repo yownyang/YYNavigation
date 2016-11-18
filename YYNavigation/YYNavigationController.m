@@ -9,14 +9,24 @@
 #import "YYNavigationController.h"
 #import "YYNavigationBar.h"
 #import "UIViewController+YYNavigationView.h"
+#import "YYNavigationPopAnimation.h"
+
+typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
+    
+    kYYNavigationBackTypeButton = 0,
+    kYYNavigationBackTypeGesture
+};
 
 @interface YYNavigationController () <UINavigationControllerDelegate>
 
 @property (nonatomic) NSMutableArray *navigationBarStack;
 
 @property (nonatomic) YYNavigationBar *previousBar;
-@property (nonatomic, assign) CGFloat previousBarInitialNaviAlpha;
-@property (nonatomic, assign) CGFloat naviBarInitialNaviAlpha;
+@property (nonatomic) CGFloat previousBarInitialNaviAlpha;
+@property (nonatomic) CGFloat naviBarInitialNaviAlpha;
+
+@property (nonatomic) YYNavigationBackType backType;
+@property (nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 
 @end
 
@@ -43,18 +53,6 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-    
-    [self.interactivePopGestureRecognizer addTarget:self action:@selector(customNavigationBarAnimation:)];
-}
-
-- (void)dealloc {
-    
-    [self removeObserver:self forKeyPath:@"viewControllers"];
-}
-
 #pragma mark - Setup
 
 - (void)setupCustomNavigationBar {
@@ -62,6 +60,15 @@
     self.navigationBar.hidden = YES;
     
     [self modifyNavigationBarWithCount:self.viewControllers.count];
+    
+    self.interactivePopGestureRecognizer.enabled = NO;
+    self.delegate = self;
+    
+    UIScreenEdgePanGestureRecognizer *screenEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(customNavigationBarAnimation:)];
+    screenEdgeGesture.edges = UIRectEdgeLeft;
+    [self.interactivePopGestureRecognizer.view addGestureRecognizer:screenEdgeGesture];
+    
+    self.backType = kYYNavigationBackTypeButton;
 }
 
 #pragma mark - ModifyNavigationBar
@@ -113,9 +120,13 @@
     [currentViewController setValue:self.naviItem forKey:@"naviItem"];
 }
 
-#pragma mark ModifyPreviousNaviBar
+#pragma mark - ModifyPreviousNaviBar
 
 - (void)popStateIsEqualBegin {
+    
+    self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+    self.backType = kYYNavigationBackTypeGesture;
+    [self popViewControllerAnimated:YES];
     
     self.naviBar.userInteractionEnabled = NO;
     
@@ -129,6 +140,8 @@
 
 - (void)popStateIsEqualChangedWithProcess:(CGFloat)process {
     
+    [self.interactivePopTransition updateInteractiveTransition:process];
+
     CGFloat tempNaviAlpha = 0;
     CGFloat tempPreviousBarAlpha = 0;
 
@@ -159,10 +172,15 @@
     if (process >= 0.5) {
         
         [self modifyNavigationBarWithCount:self.viewControllers.count];
+        [self.interactivePopTransition finishInteractiveTransition];
     } else {
         
         self.naviBar.naviAlpha = self.naviBarInitialNaviAlpha;
+        [self.interactivePopTransition cancelInteractiveTransition];
     }
+    
+    self.interactivePopTransition = nil;
+    self.backType = kYYNavigationBackTypeButton;
 }
 
 #pragma mark - ReplaceSuperMethod
@@ -196,14 +214,34 @@
     
     UIViewController *viewController = [super popViewControllerAnimated:animated];
     
-    UIGestureRecognizerState state = self.interactivePopGestureRecognizer.state;
-    //代表通过点击按钮返回
-    if (state != UIGestureRecognizerStateBegan) {
+    if (self.backType == kYYNavigationBackTypeButton) {
         
         [self modifyNavigationBarWithCount:self.viewControllers.count];
     }
     
     return viewController;
+}
+
+#pragma mark - Push/Pop
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    
+    if (operation == UINavigationControllerOperationPop) {
+        
+        return [[YYNavigationPopAnimation alloc] init];
+    }
+    
+    return nil;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    
+    if ([animationController isKindOfClass:[YYNavigationPopAnimation class]]) {
+        
+        return self.interactivePopTransition;
+    }
+    
+    return nil;
 }
 
 #pragma mark - Action

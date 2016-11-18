@@ -34,3 +34,8 @@ Version --- 2.0.0
 2、只需使用YYNavigationController去初始化RootViewController即可，一行代码搞定所有。(无论纯代码/storyboard/xib都无需设置系统navigationController任何属性)
 3、实例demo更新，功能分界面展示，清晰易懂
 4、修复一大堆之前遗留BUG
+
+Version --- 2.0.1
+1、修复了快速侧滑返回时，导航栏未正确设置的BUG
+2、自定义了侧滑手势，可通过替换YYNavigationPopAnimation文件修改侧滑动画
+3、移除一些无用的修饰符

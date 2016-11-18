@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD13DA1E1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */; };
 		DD1955AD1DD8E06F00FD3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1955AB1DD8E06F00FD3582 /* Main.storyboard */; };
 		DD1955B51DD8E08400FD3582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B01DD8E08400FD3582 /* main.m */; };
 		DD1955B71DD8E08F00FD3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD1955B61DD8E08F00FD3582 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationPopAnimation.h; sourceTree = "<group>"; };
+		DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationPopAnimation.m; sourceTree = "<group>"; };
 		DD1847711D51C61A00E1C1FA /* YYNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1955AC1DD8E06F00FD3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = YYNavigationExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DD1955AF1DD8E08400FD3582 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YYNavigationExample/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -112,11 +115,8 @@
 		DD1955C11DD8E0BC00FD3582 /* YYNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				DD1955C21DD8E0BC00FD3582 /* UIView+YYNavigationFrame.h */,
-				DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */,
-				DD1955C41DD8E0BC00FD3582 /* UIViewController+YYNavigationView.h */,
-				DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */,
 				DD1955C61DD8E0BC00FD3582 /* YYNavigation.h */,
+				DD1955CF1DD8E0BC00FD3582 /* YYNavigationMacro.h */,
 				DD1955C71DD8E0BC00FD3582 /* YYNavigationBar.h */,
 				DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */,
 				DD1955C91DD8E0BC00FD3582 /* YYNavigationBarButton.h */,
@@ -125,7 +125,12 @@
 				DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */,
 				DD1955CD1DD8E0BC00FD3582 /* YYNavigationItem.h */,
 				DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */,
-				DD1955CF1DD8E0BC00FD3582 /* YYNavigationMacro.h */,
+				DD1955C21DD8E0BC00FD3582 /* UIView+YYNavigationFrame.h */,
+				DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */,
+				DD1955C41DD8E0BC00FD3582 /* UIViewController+YYNavigationView.h */,
+				DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */,
+				DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */,
+				DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */,
 			);
 			path = YYNavigation;
 			sourceTree = SOURCE_ROOT;
@@ -201,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD1955D21DD8E0BC00FD3582 /* YYNavigationBar.m in Sources */,
+				DD13DA1E1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m in Sources */,
 				DD1955C01DD8E0A700FD3582 /* SecondViewController.m in Sources */,
 				DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */,
 				DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */,

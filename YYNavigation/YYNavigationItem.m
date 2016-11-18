@@ -14,8 +14,8 @@ static NSString *const kTextColor = @"kTextColor";
 
 @property (nonatomic) UIViewController *lastVC;
 
-@property (nonatomic, assign) CGFloat leftButtonsX;
-@property (nonatomic, assign) CGFloat rightButtonsX;
+@property (nonatomic) CGFloat leftButtonsX;
+@property (nonatomic) CGFloat rightButtonsX;
 
 @property (nonatomic) UIImageView *separatorLine;
 @property (nonatomic) UILabel *titleLabel;

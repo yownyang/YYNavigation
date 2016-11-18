@@ -10,16 +10,16 @@
 
 @interface UIView (YYNavigationFrame)
 
-@property (assign, nonatomic) CGPoint origin;
-@property (assign, nonatomic) CGSize size;
+@property (nonatomic) CGPoint origin;
+@property (nonatomic) CGSize size;
 
-@property (assign, nonatomic) CGFloat X;
-@property (assign, nonatomic) CGFloat Y;
+@property (nonatomic) CGFloat X;
+@property (nonatomic) CGFloat Y;
 
-@property (assign, nonatomic) CGFloat width;
-@property (assign, nonatomic) CGFloat height;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
 
-@property (assign, nonatomic) CGFloat centerX;
-@property (assign, nonatomic) CGFloat centerY;
+@property (nonatomic) CGFloat centerX;
+@property (nonatomic) CGFloat centerY;
 
 @end

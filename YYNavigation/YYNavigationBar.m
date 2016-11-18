@@ -13,7 +13,7 @@ static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
 
 @interface YYNavigationBar ()
 
-@property (nonatomic, assign) CGFloat stackCount;
+@property (nonatomic) CGFloat stackCount;
 @property (nonatomic) UIViewController *lastVC;
 
 @property (nonatomic, readwrite) YYNavigationItem *naviItem;
