@@ -8,6 +8,7 @@
 
 #import "YYNavigationBar.h"
 #import "YYNavigationItem.h"
+#import "YYNavigationMacro.h"
 
 static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
 

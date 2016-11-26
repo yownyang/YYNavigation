@@ -7,6 +7,8 @@
 //
 
 #import "YYNavigationBarButton.h"
+#import "YYNavigationMacro.h"
+#import "UIView+YYNavigationFrame.h"
 
 @interface YYNavigationBarButton ()
 

@@ -9,6 +9,8 @@
 #import "FirstViewController.h"
 #import "SecondViewController.h"
 
+#import "YYNavigation.h"
+
 @interface FirstViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) UITableView *tableView;
@@ -55,7 +57,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     
     return self.textArray.count;
 }

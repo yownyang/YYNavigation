@@ -7,6 +7,8 @@
 //
 
 #import "YYNavigationItem.h"
+#import "YYNavigationMacro.h"
+#import "UIView+YYNavigationFrame.h"
 
 static NSString *const kTextColor = @"kTextColor";
 

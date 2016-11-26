@@ -29,9 +29,6 @@
 		DD1955AC1DD8E06F00FD3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = YYNavigationExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DD1955AF1DD8E08400FD3582 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YYNavigationExample/Info.plist; sourceTree = SOURCE_ROOT; };
 		DD1955B01DD8E08400FD3582 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = YYNavigationExample/main.m; sourceTree = SOURCE_ROOT; };
-		DD1955B11DD8E08400FD3582 /* PCHDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCHDefine.h; path = YYNavigationExample/PCHDefine.h; sourceTree = SOURCE_ROOT; };
-		DD1955B21DD8E08400FD3582 /* PCHHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCHHeader.h; path = YYNavigationExample/PCHHeader.h; sourceTree = SOURCE_ROOT; };
-		DD1955B31DD8E08400FD3582 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = YYNavigationExample/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		DD1955B61DD8E08F00FD3582 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = YYNavigationExample/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		DD1955B81DD8E0A700FD3582 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YYNavigationExample/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		DD1955B91DD8E0A700FD3582 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YYNavigationExample/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -105,9 +102,6 @@
 			children = (
 				DD1955AF1DD8E08400FD3582 /* Info.plist */,
 				DD1955B01DD8E08400FD3582 /* main.m */,
-				DD1955B11DD8E08400FD3582 /* PCHDefine.h */,
-				DD1955B21DD8E08400FD3582 /* PCHHeader.h */,
-				DD1955B31DD8E08400FD3582 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -326,7 +320,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YYNavigationExample/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -343,7 +337,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YYNavigationExample/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
