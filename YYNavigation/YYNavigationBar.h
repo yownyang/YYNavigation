@@ -14,7 +14,7 @@
 // 是否隐藏自定义NavigationBar(默认显示)
 @property (nonatomic) BOOL isHiddenNaviBar;
 
-// 设置当前界面以及新生成界面NavigationBar的背景色(默认黑灰色, 建议在viewWillAppear/viewWillDidAppear中设置)
+// 设置所有界面NavigationBar的背景色(默认黑灰色)
 @property (nonatomic) UIColor *naviBgColor;
 
 // 设置NavigationBar的透明度(默认1.0)

@@ -44,19 +44,10 @@ static NSString *const kTextColor = @"kTextColor";
         
         self.frame = CGRectMake(0, YYStatusBarHeight, YYViewWidth, YYNaviBarHeight);
         
-        [self addSubview:self.separatorLine];
         stackCount > 1 ? [self addSubview:self.backButton] : nil;
         
         self.leftButtonsX = YYSpace;
         self.rightButtonsX = 0;
-        
-        if ([self getTextColor]) {
-            
-            self.textColor = [self getTextColor];
-        } else {
-            
-            self.textColor = [UIColor whiteColor];
-        }
         
         self.lastVC = lastViewController;
     }
@@ -121,27 +112,21 @@ static NSString *const kTextColor = @"kTextColor";
         return;
     }
     
-    [self saveTextColor:textColor];
-    
     _textColor = textColor;
     
     self.titleLabel.textColor = textColor;
     
-    if (self.leftButtons.count > 0) {
-        
-        [self.leftButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-           
-            [obj setTitleColor:textColor forState:UIControlStateNormal];
-        }];
-    }
+    [self.backButton setTitleColor:textColor forState:UIControlStateNormal];
     
-    if (self.rightButtons.count > 0) {
+    [self.leftButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        [self.rightButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-           
-            [obj setTitleColor:textColor forState:UIControlStateNormal];
-        }];
-    }
+        [obj setTitleColor:textColor forState:UIControlStateNormal];
+    }];
+    
+    [self.rightButtons enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [obj setTitleColor:textColor forState:UIControlStateNormal];
+    }];
 }
 
 - (void)setLineColor:(UIColor *)lineColor {
@@ -151,6 +136,11 @@ static NSString *const kTextColor = @"kTextColor";
     self.separatorLine.image = nil;
     
     self.separatorLine.backgroundColor = lineColor;
+    
+    if (!self.separatorLine.superview) {
+        
+        [self addSubview:self.separatorLine];
+    }
 }
 
 - (void)setLineImageName:(NSString *)lineImageName {
@@ -160,6 +150,11 @@ static NSString *const kTextColor = @"kTextColor";
     self.separatorLine.backgroundColor = nil;
     
     self.separatorLine.image = [UIImage imageNamed:lineImageName];
+    
+    if (!self.separatorLine.superview) {
+        
+        [self addSubview:self.separatorLine];
+    }
 }
 
 - (void)setLeftButtons:(NSArray<UIButton *> *)leftButtons {
@@ -183,11 +178,11 @@ static NSString *const kTextColor = @"kTextColor";
         float tempX = obj.width + YYSpace;
         
         self.leftButtonsX = self.leftButtonsX + tempX;
-
-        [obj setTitleColor:self.textColor forState:UIControlStateNormal];
         
         obj.centerY = self.height / 2;
 
+        [obj setTitleColor:self.textColor forState:UIControlStateNormal];
+        
         [self addSubview:obj];
     }];
 }
@@ -208,10 +203,10 @@ static NSString *const kTextColor = @"kTextColor";
         self.rightButtonsX = self.rightButtonsX + tempX;
         
         [obj setFrame:CGRectMake(YYViewWidth - self.rightButtonsX, 0, obj.width, obj.height)];
+                
+        obj.centerY = self.height / 2;
         
         [obj setTitleColor:self.textColor forState:UIControlStateNormal];
-        
-        obj.centerY = self.height / 2;
         
         [self addSubview:obj];
     }];
@@ -237,6 +232,7 @@ static NSString *const kTextColor = @"kTextColor";
     
     [_backButton setFrame:CGRectMake(YYSpace, 0, _backButton.width, _backButton.height)];
     _backButton.centerY = self.height / 2;
+    [_backButton setTitleColor:self.textColor forState:UIControlStateNormal];
 }
 
 - (void)setIsHiddenBackButton:(BOOL)isHiddenBackButton {
@@ -264,7 +260,7 @@ static NSString *const kTextColor = @"kTextColor";
         
         _separatorLine = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.height - 1.0, self.width, 1.0)];
     }
-    
+
     return _separatorLine;
 }
 
@@ -292,7 +288,7 @@ static NSString *const kTextColor = @"kTextColor";
         
         _titleLabel = [[UILabel alloc]init];
         
-        _titleLabel.textColor = self.textColor;
+        _titleLabel.textColor = [UIColor whiteColor];
         
         _titleLabel.font = [UIFont systemFontOfSize:YYLabelFont];
         
@@ -307,25 +303,6 @@ static NSString *const kTextColor = @"kTextColor";
 - (void)popViewController {
     
     [self.lastVC.navigationController popViewControllerAnimated:YES];
-}
-
-#pragma mark - NSUserDefaults
-
-- (void)saveTextColor:(UIColor *)textColor {
-    
-    CGColorRef textColorRef = textColor.CGColor;
-    NSString *textColorStr = [CIColor colorWithCGColor:textColorRef].stringRepresentation;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:textColorStr forKey:kTextColor];
-}
-
-- (UIColor *)getTextColor {
-    
-    NSString *textColorStr = [[NSUserDefaults standardUserDefaults] objectForKey:kTextColor];
-    
-    CIColor *ciTextColor = [CIColor colorWithString:textColorStr];
-    
-    return [UIColor colorWithRed:ciTextColor.red green:ciTextColor.green blue:ciTextColor.blue alpha:ciTextColor.alpha];
 }
 
 @end

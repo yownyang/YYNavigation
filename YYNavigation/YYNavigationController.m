@@ -10,6 +10,10 @@
 #import "YYNavigationBar.h"
 #import "UIViewController+YYNavigationView.h"
 #import "YYNavigationPopAnimation.h"
+#import "YYNavigationItem.h"
+
+static void *kYYNaviBarBGColor = @"kYYNaviBarBGColor";
+static void *kYYNaviItemTextColor = @"kYYNaviItemTextColor";
 
 typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     
@@ -28,7 +32,6 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 @property (nonatomic) YYNavigationBackType backType;
 @property (nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgeGesture;
 @property (nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition;
-
 
 @end
 
@@ -77,6 +80,37 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     self.backType = kYYNavigationBackTypeButton;
 }
 
+#pragma mark - KVO
+
+- (void)addObserver {
+    
+    [self.navigationBarStack.lastObject addObserver:self forKeyPath:@"naviBgColor" options:NSKeyValueObservingOptionNew context:kYYNaviBarBGColor];
+    
+    [self.navigationBarStack.lastObject addObserver:self forKeyPath:@"naviItem.textColor" options:NSKeyValueObservingOptionNew context:kYYNaviItemTextColor];
+}
+
+- (void)removeObserve {
+    
+    [self.navigationBarStack.lastObject removeObserver:self forKeyPath:@"naviBgColor"];
+    [self.navigationBarStack.lastObject removeObserver:self forKeyPath:@"naviItem.textColor"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    
+    if (context == kYYNaviBarBGColor) {
+        
+        [[YYNavigationBar appearance] setNaviBgColor:change[NSKeyValueChangeNewKey]];
+        
+    } else if (context == kYYNaviItemTextColor) {
+        
+        [[YYNavigationItem appearance] setTextColor:change[NSKeyValueChangeNewKey]];
+        
+    } else {
+        
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
 #pragma mark - ModifyNavigationBar
 
 - (void)modifyNavigationBarWithCount:(NSUInteger)count {
@@ -93,7 +127,7 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 - (void)addNavigationBar {
     
     [self.navigationBarStack addObject:[YYNavigationBar naviBarWithStackCount:self.viewControllers.count lastViewController:self.viewControllers.lastObject]];
-    
+    [self addObserver];
     [self showNavigationBar];
 }
 
@@ -101,9 +135,10 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     
     NSUInteger beginIndex = self.viewControllers.count;
     NSUInteger endIndex = self.navigationBarStack.count;
-
+    
     for (NSUInteger i = beginIndex; i < endIndex; i++) {
         
+        [self removeObserve];
         [self.navigationBarStack removeLastObject];
     }
     

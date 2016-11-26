@@ -43,14 +43,7 @@ static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
         self.stackCount = stackCount;
         self.lastVC = lastViewController;
         
-        if ([self getNaviBgColor]) {
-            
-            self.naviBgColor = [self getNaviBgColor];
-        } else {
-            
-            self.naviBgColor = [UIColor darkGrayColor];
-        }
-        
+        self.backgroundColor = [UIColor darkGrayColor];
         self.naviAlpha = 1.0;
         self.naviSuperAlpha = 1.0;
         
@@ -72,8 +65,6 @@ static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
     
     _naviBgColor = naviBgColor;
-    
-    [self saveNaviBgColor:naviBgColor];
     
     self.backgroundColor = naviBgColor;
 }
@@ -103,25 +94,5 @@ static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
     
     return _naviItem;
 }
-
-#pragma mark - NSUserDefaults
-
-- (void)saveNaviBgColor:(UIColor *)naviBgColor {
-    
-    CGColorRef naviBgColorRef = naviBgColor.CGColor;
-    NSString *naviBgColorStr = [CIColor colorWithCGColor:naviBgColorRef].stringRepresentation;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:naviBgColorStr forKey:kBarBackgroundColor];
-}
-
-- (UIColor *)getNaviBgColor {
-    
-    NSString *naviBgColorStr = [[NSUserDefaults standardUserDefaults] objectForKey:kBarBackgroundColor];
-    
-    CIColor *ciNaviBgColor = [CIColor colorWithString:naviBgColorStr];
-    
-    return [UIColor colorWithRed:ciNaviBgColor.red green:ciNaviBgColor.green blue:ciNaviBgColor.blue alpha:ciNaviBgColor.alpha];
-}
-
 
 @end

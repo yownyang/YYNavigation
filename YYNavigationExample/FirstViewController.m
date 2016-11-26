@@ -25,7 +25,7 @@
     
     [super viewWillAppear:animated];
     
-    // 恢复原样
+    // 恢复原样，方便调试
     self.naviBar.naviBgColor = [UIColor darkGrayColor];
     self.naviItem.textColor = [UIColor whiteColor];
 }

@@ -22,7 +22,7 @@
 // 设置返回按钮是否隐藏(默认为NO)
 @property (nonatomic) BOOL isHiddenBackButton;
 
-// 当前界面以及新生成界面的文本的颜色(默认白色。建议在viewWillAppear/viewWillDidAppear中设置)
+// 所有界面的文本的颜色(默认白色, titleView存在时无效)
 @property (nonatomic) UIColor *textColor;
 
 // 分割线颜色(默认无色)
