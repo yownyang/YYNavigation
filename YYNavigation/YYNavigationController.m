@@ -26,7 +26,9 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 @property (nonatomic) CGFloat naviBarInitialNaviAlpha;
 
 @property (nonatomic) YYNavigationBackType backType;
+@property (nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgeGesture;
 @property (nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition;
+
 
 @end
 
@@ -57,17 +59,21 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 
 - (void)setupCustomNavigationBar {
     
-    self.navigationBar.hidden = YES;
-    
+    [self setupNativeNavigationBarDisenable];
     [self modifyNavigationBarWithCount:self.viewControllers.count];
+    [self setupScreenEdgeGesture];
+}
+
+- (void)setupNativeNavigationBarDisenable {
     
+    self.navigationBar.hidden = YES;
     self.interactivePopGestureRecognizer.enabled = NO;
+}
+
+- (void)setupScreenEdgeGesture {
+    
     self.delegate = self;
-    
-    UIScreenEdgePanGestureRecognizer *screenEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(customNavigationBarAnimation:)];
-    screenEdgeGesture.edges = UIRectEdgeLeft;
-    [self.interactivePopGestureRecognizer.view addGestureRecognizer:screenEdgeGesture];
-    
+    [self.interactivePopGestureRecognizer.view addGestureRecognizer:self.screenEdgeGesture];
     self.backType = kYYNavigationBackTypeButton;
 }
 
@@ -123,9 +129,9 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 #pragma mark - ModifyPreviousNaviBar
 
 - (void)popStateIsEqualBegin {
-    
-    self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+
     self.backType = kYYNavigationBackTypeGesture;
+    self.interactivePopTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
     [self popViewControllerAnimated:YES];
     
     self.naviBar.userInteractionEnabled = NO;
@@ -277,6 +283,17 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     }
     
     return _navigationBarStack;
+}
+
+- (UIScreenEdgePanGestureRecognizer *)screenEdgeGesture {
+    
+    if (!_screenEdgeGesture) {
+        
+        _screenEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(customNavigationBarAnimation:)];
+        _screenEdgeGesture.edges = UIRectEdgeLeft;
+    }
+    
+    return _screenEdgeGesture;
 }
 
 @end
