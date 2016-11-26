@@ -10,8 +10,6 @@
 #import "YYNavigationMacro.h"
 #import "UIView+YYNavigationFrame.h"
 
-static NSString *const kTextColor = @"kTextColor";
-
 @interface YYNavigationItem ()
 
 @property (nonatomic) UIViewController *lastVC;

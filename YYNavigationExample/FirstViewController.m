@@ -11,7 +11,7 @@
 
 #import "YYNavigation.h"
 
-@interface FirstViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) UITableView *tableView;
 

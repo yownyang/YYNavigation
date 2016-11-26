@@ -10,8 +10,6 @@
 #import "YYNavigationItem.h"
 #import "YYNavigationMacro.h"
 
-static NSString *const kBarBackgroundColor = @"kBarBackgroundColor";
-
 @interface YYNavigationBar ()
 
 @property (nonatomic) CGFloat stackCount;
