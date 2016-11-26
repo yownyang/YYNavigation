@@ -18,7 +18,7 @@ static const void *kNavigationItem = @"NavigationItem";
 
 - (void)setNaviBar:(YYNavigationBar *)naviBar {
     
-    objc_setAssociatedObject(self, kNavigationBar, naviBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNavigationBar, naviBar, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (YYNavigationBar *)naviBar {
@@ -28,7 +28,7 @@ static const void *kNavigationItem = @"NavigationItem";
 
 - (void)setNaviItem:(YYNavigationItem *)naviItem {
     
-    objc_setAssociatedObject(self, kNavigationItem, naviItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kNavigationItem, naviItem, OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (YYNavigationItem *)naviItem {
