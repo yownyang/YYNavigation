@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class YYNavigationBar, YYNavigationItem;
+@class YYNavigationBar, YYNavigationItem, YYNavigationController;
 
 @interface UIViewController (YYNavigationView)
+
+@property (nonatomic, readonly) YYNavigationController *naviController;
 
 @property (nonatomic, readonly) YYNavigationBar *naviBar;
 

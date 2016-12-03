@@ -21,7 +21,7 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     kYYNavigationBackTypeGesture
 };
 
-@interface YYNavigationController () <UINavigationControllerDelegate>
+@interface YYNavigationController () <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic) NSMutableArray *navigationBarStack;
 
@@ -31,6 +31,7 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 
 @property (nonatomic) YYNavigationBackType backType;
 @property (nonatomic) UIScreenEdgePanGestureRecognizer *screenEdgeGesture;
+@property (nonatomic) UIPanGestureRecognizer *panGesture;
 @property (nonatomic) UIPercentDrivenInteractiveTransition *interactivePopTransition;
 
 @end
@@ -39,45 +40,56 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 
 #pragma mark - LifeCycle
 
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController gestureType:(YYNavigationGestureType)gestureType {
+    
+    self = [super initWithRootViewController:rootViewController];
+    
+    if (self) {
+        
+        [self setupCustomNavigationBar];
+       
+        if (!gestureType) {
+            
+            [self setGestureType:kYYNavigationGestureScreenEdgeType];
+        } else {
+            
+            [self setGestureType:gestureType];
+        }
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
+    
+    return [self initWithRootViewController:rootViewController gestureType:kYYNavigationGestureScreenEdgeType];
+}
+
 - (void)awakeFromNib {
     
     [super awakeFromNib];
         
     [self setupCustomNavigationBar];
+    [self setGestureType:kYYNavigationGestureScreenEdgeType];
 }
 
-- (instancetype)init {
+- (void)dealloc {
     
-    self = [super init];
-    
-    if (self) {
-        
-        [self setupCustomNavigationBar];
-    }
-    
-    return self;
+    [self removeAllObserve];
 }
 
 #pragma mark - Setup
 
 - (void)setupCustomNavigationBar {
     
-    [self setupNativeNavigationBarDisenable];
     [self modifyNavigationBarWithCount:self.viewControllers.count];
-    [self setupScreenEdgeGesture];
+    [self setupNativeNavigationBarDisenable];
 }
 
 - (void)setupNativeNavigationBarDisenable {
     
     self.navigationBar.hidden = YES;
     self.interactivePopGestureRecognizer.enabled = NO;
-}
-
-- (void)setupScreenEdgeGesture {
-    
-    self.delegate = self;
-    [self.interactivePopGestureRecognizer.view addGestureRecognizer:self.screenEdgeGesture];
-    self.backType = kYYNavigationBackTypeButton;
 }
 
 #pragma mark - KVO
@@ -90,9 +102,18 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
 }
 
 - (void)removeObserve {
-    
+        
     [self.navigationBarStack.lastObject removeObserver:self forKeyPath:@"naviBgColor"];
     [self.navigationBarStack.lastObject removeObserver:self forKeyPath:@"naviItem.textColor"];
+}
+
+- (void)removeAllObserve {
+    
+    [self.navigationBarStack enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+       
+        [obj removeObserver:self forKeyPath:@"naviBgColor"];
+        [obj removeObserver:self forKeyPath:@"naviItem.textColor"];
+    }];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -159,6 +180,7 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     UIViewController *currentViewController = self.viewControllers.lastObject;
     [currentViewController setValue:self.naviBar forKey:@"naviBar"];
     [currentViewController setValue:self.naviItem forKey:@"naviItem"];
+    [currentViewController setValue:self forKey:@"naviController"];
 }
 
 #pragma mark - ModifyPreviousNaviBar
@@ -224,6 +246,20 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     self.backType = kYYNavigationBackTypeButton;
 }
 
+#pragma mark - ModifyGesture
+
+- (void)addScreenGesture:(UIGestureRecognizer *)gesture {
+    
+    self.delegate = self;
+    [self.interactivePopGestureRecognizer.view addGestureRecognizer:gesture];
+    self.backType = kYYNavigationBackTypeButton;
+}
+
+- (void)removeScreenGesture:(UIGestureRecognizer *)gesture {
+    
+    [self.interactivePopGestureRecognizer.view removeGestureRecognizer:gesture];
+}
+
 #pragma mark - ReplaceSuperMethod
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
@@ -263,7 +299,7 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     return viewController;
 }
 
-#pragma mark - Push/Pop
+#pragma mark - NavigationControllerDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
     
@@ -285,16 +321,44 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     return nil;
 }
 
+#pragma mark - GestureDelegate
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    
+    if (self.viewControllers.count == 1) {
+        
+        return NO;
+    } else {
+        
+        return YES;
+    }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    return YES;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    
+    if (gestureRecognizer == self.screenEdgeGesture || self.panGesture) {
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
 #pragma mark - Action
 
-- (void)customNavigationBarAnimation:(UIScreenEdgePanGestureRecognizer *)screenEdgeGesture {
+- (void)customNavigationBarAnimation:(UIPanGestureRecognizer *)gesture {
     
     //    计算（相对于起始位置[手势开始位置]移动了多少个点）/ 屏幕宽度的比例, 用来当做滑动动画的进度
-    CGFloat process = [screenEdgeGesture translationInView:self.view].x / self.view.bounds.size.width;
+    CGFloat process = [gesture translationInView:self.view].x / self.view.bounds.size.width;
     //    防止值溢出0-1, MIN(1.0, process)确保了值不会大于1.0, MAX(0.0, X)确保了值不小于0.0
     process = MAX(0.0, MIN(1.0, process));
     
-    UIGestureRecognizerState state = screenEdgeGesture.state;
+    UIGestureRecognizerState state = gesture.state;
     if (state == UIGestureRecognizerStateBegan) {
 
         [self popStateIsEqualBegin];
@@ -325,10 +389,46 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     if (!_screenEdgeGesture) {
         
         _screenEdgeGesture = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(customNavigationBarAnimation:)];
+        _screenEdgeGesture.delegate = self;
         _screenEdgeGesture.edges = UIRectEdgeLeft;
     }
     
     return _screenEdgeGesture;
+}
+
+- (UIPanGestureRecognizer *)panGesture {
+    
+    if (!_panGesture) {
+        
+        _panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(customNavigationBarAnimation:)];
+        _panGesture.delegate = self;
+    }
+    
+    return _panGesture;
+}
+
+#pragma mark - Setter
+
+- (void)setGestureType:(YYNavigationGestureType)gestureType {
+    
+    switch (gestureType) {
+        case kYYNavigationGestureNoneType:
+            
+            [self removeScreenGesture:self.screenEdgeGesture];
+            [self removeScreenGesture:self.panGesture];
+            break;
+        case kYYNavigationGestureScreenEdgeType:
+            
+            [self removeScreenGesture:self.panGesture];
+            [self addScreenGesture:self.screenEdgeGesture];
+
+            break;
+        case kYYNavigationGestureFullScreenType:
+            
+            [self removeScreenGesture:self.screenEdgeGesture];
+            [self addScreenGesture:self.panGesture];
+            break;
+    }
 }
 
 @end

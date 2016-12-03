@@ -20,6 +20,7 @@
 		DD1955D31DD8E0BC00FD3582 /* YYNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */; };
 		DD1955D41DD8E0BC00FD3582 /* YYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */; };
 		DD1955D51DD8E0BC00FD3582 /* YYNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */; };
+		DD92E4691DF28A23001A3624 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92E4681DF28A23001A3624 /* ThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,9 @@
 		DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationController.m; sourceTree = "<group>"; };
 		DD1955CD1DD8E0BC00FD3582 /* YYNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationItem.h; sourceTree = "<group>"; };
 		DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationItem.m; sourceTree = "<group>"; };
-		DD1955CF1DD8E0BC00FD3582 /* YYNavigationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationMacro.h; sourceTree = "<group>"; };
+		DD92E4661DF27217001A3624 /* YYNavigationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationMacro.h; sourceTree = "<group>"; };
+		DD92E4671DF28A23001A3624 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdViewController.h; path = YYNavigationExample/ThirdViewController.h; sourceTree = SOURCE_ROOT; };
+		DD92E4681DF28A23001A3624 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = YYNavigationExample/ThirdViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				DD1955BB1DD8E0A700FD3582 /* FirstViewController.m */,
 				DD1955BC1DD8E0A700FD3582 /* SecondViewController.h */,
 				DD1955BD1DD8E0A700FD3582 /* SecondViewController.m */,
+				DD92E4671DF28A23001A3624 /* ThirdViewController.h */,
+				DD92E4681DF28A23001A3624 /* ThirdViewController.m */,
 				DD1955B61DD8E08F00FD3582 /* Assets.xcassets */,
 				DD1955AB1DD8E06F00FD3582 /* Main.storyboard */,
 				DD1955AE1DD8E07700FD3582 /* Supporting Files */,
@@ -110,24 +115,56 @@
 			isa = PBXGroup;
 			children = (
 				DD1955C61DD8E0BC00FD3582 /* YYNavigation.h */,
-				DD1955CF1DD8E0BC00FD3582 /* YYNavigationMacro.h */,
-				DD1955C71DD8E0BC00FD3582 /* YYNavigationBar.h */,
-				DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */,
-				DD1955C91DD8E0BC00FD3582 /* YYNavigationBarButton.h */,
-				DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */,
+				DD92E4621DF270C1001A3624 /* YYNavigationMacro */,
+				DD92E4631DF270E7001A3624 /* YYNavigationBase */,
+				DD92E4641DF2710D001A3624 /* YYNavigationCategory */,
+				DD92E4651DF27120001A3624 /* YYNavigationAnimation */,
+			);
+			path = YYNavigation;
+			sourceTree = SOURCE_ROOT;
+		};
+		DD92E4621DF270C1001A3624 /* YYNavigationMacro */ = {
+			isa = PBXGroup;
+			children = (
+				DD92E4661DF27217001A3624 /* YYNavigationMacro.h */,
+			);
+			path = YYNavigationMacro;
+			sourceTree = "<group>";
+		};
+		DD92E4631DF270E7001A3624 /* YYNavigationBase */ = {
+			isa = PBXGroup;
+			children = (
 				DD1955CB1DD8E0BC00FD3582 /* YYNavigationController.h */,
 				DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */,
+				DD1955C71DD8E0BC00FD3582 /* YYNavigationBar.h */,
+				DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */,
 				DD1955CD1DD8E0BC00FD3582 /* YYNavigationItem.h */,
 				DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */,
+				DD1955C91DD8E0BC00FD3582 /* YYNavigationBarButton.h */,
+				DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */,
+			);
+			path = YYNavigationBase;
+			sourceTree = "<group>";
+		};
+		DD92E4641DF2710D001A3624 /* YYNavigationCategory */ = {
+			isa = PBXGroup;
+			children = (
 				DD1955C21DD8E0BC00FD3582 /* UIView+YYNavigationFrame.h */,
 				DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */,
 				DD1955C41DD8E0BC00FD3582 /* UIViewController+YYNavigationView.h */,
 				DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */,
+			);
+			path = YYNavigationCategory;
+			sourceTree = "<group>";
+		};
+		DD92E4651DF27120001A3624 /* YYNavigationAnimation */ = {
+			isa = PBXGroup;
+			children = (
 				DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */,
 				DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */,
 			);
-			path = YYNavigation;
-			sourceTree = SOURCE_ROOT;
+			path = YYNavigationAnimation;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -155,6 +192,7 @@
 		DD1847691D51C61A00E1C1FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YY;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "机智的静默( http://www.cnblogs.com/jingmo/ )";
 				TargetAttributes = {
@@ -201,6 +239,7 @@
 			files = (
 				DD1955D21DD8E0BC00FD3582 /* YYNavigationBar.m in Sources */,
 				DD13DA1E1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m in Sources */,
+				DD92E4691DF28A23001A3624 /* ThirdViewController.m in Sources */,
 				DD1955C01DD8E0A700FD3582 /* SecondViewController.m in Sources */,
 				DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */,
 				DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */,

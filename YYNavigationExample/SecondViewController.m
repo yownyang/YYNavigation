@@ -122,6 +122,15 @@
         }];
         
         self.naviItem.rightButtons = @[b3, b4];
+    } else if (selectIndex == 15) {
+        
+        self.naviItem.title = @"全屏侧滑返回";
+        self.naviController.gestureType = kYYNavigationGestureFullScreenType;
+        
+    } else if (selectIndex == 16) {
+        
+        self.naviItem.title = @"无侧滑返回";
+        self.naviController.gestureType = kYYNavigationGestureNoneType;
     }
 }
 
