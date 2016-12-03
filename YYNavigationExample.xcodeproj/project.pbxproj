@@ -21,6 +21,7 @@
 		DD1955D41DD8E0BC00FD3582 /* YYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */; };
 		DD1955D51DD8E0BC00FD3582 /* YYNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */; };
 		DD92E4691DF28A23001A3624 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92E4681DF28A23001A3624 /* ThirdViewController.m */; };
+		DD92E46C1DF2B526001A3624 /* YYNavigationPushAnimaiton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		DD92E4661DF27217001A3624 /* YYNavigationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationMacro.h; sourceTree = "<group>"; };
 		DD92E4671DF28A23001A3624 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdViewController.h; path = YYNavigationExample/ThirdViewController.h; sourceTree = SOURCE_ROOT; };
 		DD92E4681DF28A23001A3624 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = YYNavigationExample/ThirdViewController.m; sourceTree = SOURCE_ROOT; };
+		DD92E46A1DF2B526001A3624 /* YYNavigationPushAnimaiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationPushAnimaiton.h; sourceTree = "<group>"; };
+		DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationPushAnimaiton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 		DD92E4651DF27120001A3624 /* YYNavigationAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				DD92E46A1DF2B526001A3624 /* YYNavigationPushAnimaiton.h */,
+				DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */,
 				DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */,
 				DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */,
 			);
@@ -246,6 +251,7 @@
 				DD1955B51DD8E08400FD3582 /* main.m in Sources */,
 				DD1955D41DD8E0BC00FD3582 /* YYNavigationController.m in Sources */,
 				DD1955D31DD8E0BC00FD3582 /* YYNavigationBarButton.m in Sources */,
+				DD92E46C1DF2B526001A3624 /* YYNavigationPushAnimaiton.m in Sources */,
 				DD1955D01DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m in Sources */,
 				DD1955D51DD8E0BC00FD3582 /* YYNavigationItem.m in Sources */,
 				DD1955D11DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m in Sources */,

@@ -8,9 +8,10 @@
 
 #import "YYNavigationController.h"
 #import "YYNavigationBar.h"
-#import "UIViewController+YYNavigationView.h"
-#import "YYNavigationPopAnimation.h"
 #import "YYNavigationItem.h"
+#import "YYNavigationPushAnimaiton.h"
+#import "YYNavigationPopAnimation.h"
+#import "UIViewController+YYNavigationView.h"
 
 static void *kYYNaviBarBGColor = @"kYYNaviBarBGColor";
 static void *kYYNaviItemTextColor = @"kYYNaviItemTextColor";
@@ -306,6 +307,9 @@ typedef NS_ENUM(NSUInteger, YYNavigationBackType) {
     if (operation == UINavigationControllerOperationPop) {
         
         return [[YYNavigationPopAnimation alloc] init];
+    } else if (operation == UINavigationControllerOperationPush) {
+        
+        return [[YYNavigationPushAnimaiton alloc] init];
     }
     
     return nil;
