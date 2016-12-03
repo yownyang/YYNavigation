@@ -29,6 +29,7 @@
     // 恢复原样，方便调试
     self.naviBar.naviBgColor = [UIColor darkGrayColor];
     self.naviItem.textColor = [UIColor whiteColor];
+    self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
 }
 
 - (void)viewDidLoad {
@@ -43,7 +44,7 @@
     //    懒得写getter方法了。。。。
     self.textArray = [NSArray arrayWithObjects:@"Category类中属性的用法", @"是否隐藏自定义NavigationBar", @"设置NavigationBar的背景色", @"设置NavigationBar的透明度", @"设置NavigationBar不影响子视图显示的透明度", @"设置标题", @"自定义标题View", @"重写返回按钮", @"设置返回按钮是否隐藏", @"当前界面以及新生成界面的文本的颜色", @"分割线颜色", @"分割线图片", @"自定义左边按钮集合", @"自定义右边按钮集合", @"代码初始化YYNavigationController", @"全屏侧滑返回", @"无侧滑返回", nil];
     
-    // 设置view时需要从64算起(storyboard/xib同理)，主要是还没搞清楚系统的translucent原理，有知道的可以联系我^_^
+    // 设置view时需要从64算起(storyboard/xib同理), 我试验了从0开始，发现可以实现类似系统的translucent属性，但在导航栏隐藏时，会出现导航栏位置黑条的问题。鱼和熊掌不可兼得啊。^_^
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height - 64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

@@ -47,3 +47,7 @@ YYNavigation
 2、修改了一些功能的内部实现  
 3、修改了一些配置信息
 
+#Version --- 2.0.3  
+1、添加了Push动画，可通过替换YYNavigationPushAnimation文件修改Push动画，默认为系统样式  
+2、添加了侧滑返回手势类型，可设置无手势、边缘手势返回、全屏手势返回
+

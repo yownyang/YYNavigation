@@ -14,12 +14,10 @@ DerivedData
 .idea/
 *.hmap
 *.xccheckout
+.DS_Store
 
 # CocoaPods
 Pods
-
-# Mac OS X
-.DS_Store
 
 # IPA
 *.ipa
