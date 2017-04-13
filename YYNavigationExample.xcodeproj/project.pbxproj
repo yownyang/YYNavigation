@@ -7,26 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD13DA1E1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */; };
+		0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */; };
 		DD1955AD1DD8E06F00FD3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1955AB1DD8E06F00FD3582 /* Main.storyboard */; };
 		DD1955B51DD8E08400FD3582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B01DD8E08400FD3582 /* main.m */; };
 		DD1955B71DD8E08F00FD3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD1955B61DD8E08F00FD3582 /* Assets.xcassets */; };
 		DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B91DD8E0A700FD3582 /* AppDelegate.m */; };
 		DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955BB1DD8E0A700FD3582 /* FirstViewController.m */; };
 		DD1955C01DD8E0A700FD3582 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955BD1DD8E0A700FD3582 /* SecondViewController.m */; };
-		DD1955D01DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */; };
-		DD1955D11DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */; };
-		DD1955D21DD8E0BC00FD3582 /* YYNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */; };
-		DD1955D31DD8E0BC00FD3582 /* YYNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */; };
-		DD1955D41DD8E0BC00FD3582 /* YYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */; };
-		DD1955D51DD8E0BC00FD3582 /* YYNavigationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */; };
 		DD92E4691DF28A23001A3624 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92E4681DF28A23001A3624 /* ThirdViewController.m */; };
-		DD92E46C1DF2B526001A3624 /* YYNavigationPushAnimaiton.m in Sources */ = {isa = PBXBuildFile; fileRef = DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationPopAnimation.h; sourceTree = "<group>"; };
-		DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationPopAnimation.m; sourceTree = "<group>"; };
+		3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYNavigationExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.debug.xcconfig"; sourceTree = "<group>"; };
+		BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.release.xcconfig"; sourceTree = "<group>"; };
 		DD1847711D51C61A00E1C1FA /* YYNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1955AC1DD8E06F00FD3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = YYNavigationExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DD1955AF1DD8E08400FD3582 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YYNavigationExample/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -38,24 +32,8 @@
 		DD1955BB1DD8E0A700FD3582 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = YYNavigationExample/FirstViewController.m; sourceTree = SOURCE_ROOT; };
 		DD1955BC1DD8E0A700FD3582 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = YYNavigationExample/SecondViewController.h; sourceTree = SOURCE_ROOT; };
 		DD1955BD1DD8E0A700FD3582 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = YYNavigationExample/SecondViewController.m; sourceTree = SOURCE_ROOT; };
-		DD1955C21DD8E0BC00FD3582 /* UIView+YYNavigationFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYNavigationFrame.h"; sourceTree = "<group>"; };
-		DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYNavigationFrame.m"; sourceTree = "<group>"; };
-		DD1955C41DD8E0BC00FD3582 /* UIViewController+YYNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YYNavigationView.h"; sourceTree = "<group>"; };
-		DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YYNavigationView.m"; sourceTree = "<group>"; };
-		DD1955C61DD8E0BC00FD3582 /* YYNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigation.h; sourceTree = "<group>"; };
-		DD1955C71DD8E0BC00FD3582 /* YYNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationBar.h; sourceTree = "<group>"; };
-		DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationBar.m; sourceTree = "<group>"; };
-		DD1955C91DD8E0BC00FD3582 /* YYNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationBarButton.h; sourceTree = "<group>"; };
-		DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationBarButton.m; sourceTree = "<group>"; };
-		DD1955CB1DD8E0BC00FD3582 /* YYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationController.h; sourceTree = "<group>"; };
-		DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationController.m; sourceTree = "<group>"; };
-		DD1955CD1DD8E0BC00FD3582 /* YYNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationItem.h; sourceTree = "<group>"; };
-		DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationItem.m; sourceTree = "<group>"; };
-		DD92E4661DF27217001A3624 /* YYNavigationMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationMacro.h; sourceTree = "<group>"; };
 		DD92E4671DF28A23001A3624 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThirdViewController.h; path = YYNavigationExample/ThirdViewController.h; sourceTree = SOURCE_ROOT; };
 		DD92E4681DF28A23001A3624 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThirdViewController.m; path = YYNavigationExample/ThirdViewController.m; sourceTree = SOURCE_ROOT; };
-		DD92E46A1DF2B526001A3624 /* YYNavigationPushAnimaiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYNavigationPushAnimaiton.h; sourceTree = "<group>"; };
-		DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYNavigationPushAnimaiton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC5DCCBEDE74565C8786DA9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DD1847681D51C61A00E1C1FA = {
 			isa = PBXGroup;
 			children = (
 				DD1847731D51C61A00E1C1FA /* YYNavigation */,
 				DD1847721D51C61A00E1C1FA /* Products */,
+				EF6F4741E4B7FD9E0D1A80E5 /* Pods */,
+				CC5DCCBEDE74565C8786DA9B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,7 +77,6 @@
 		DD1847731D51C61A00E1C1FA /* YYNavigation */ = {
 			isa = PBXGroup;
 			children = (
-				DD1955C11DD8E0BC00FD3582 /* YYNavigation */,
 				DD1955B81DD8E0A700FD3582 /* AppDelegate.h */,
 				DD1955B91DD8E0A700FD3582 /* AppDelegate.m */,
 				DD1955BA1DD8E0A700FD3582 /* FirstViewController.h */,
@@ -114,61 +102,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DD1955C11DD8E0BC00FD3582 /* YYNavigation */ = {
+		EF6F4741E4B7FD9E0D1A80E5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DD1955C61DD8E0BC00FD3582 /* YYNavigation.h */,
-				DD92E4621DF270C1001A3624 /* YYNavigationMacro */,
-				DD92E4631DF270E7001A3624 /* YYNavigationBase */,
-				DD92E4641DF2710D001A3624 /* YYNavigationCategory */,
-				DD92E4651DF27120001A3624 /* YYNavigationAnimation */,
+				AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */,
+				BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */,
 			);
-			path = YYNavigation;
-			sourceTree = SOURCE_ROOT;
-		};
-		DD92E4621DF270C1001A3624 /* YYNavigationMacro */ = {
-			isa = PBXGroup;
-			children = (
-				DD92E4661DF27217001A3624 /* YYNavigationMacro.h */,
-			);
-			path = YYNavigationMacro;
-			sourceTree = "<group>";
-		};
-		DD92E4631DF270E7001A3624 /* YYNavigationBase */ = {
-			isa = PBXGroup;
-			children = (
-				DD1955CB1DD8E0BC00FD3582 /* YYNavigationController.h */,
-				DD1955CC1DD8E0BC00FD3582 /* YYNavigationController.m */,
-				DD1955C71DD8E0BC00FD3582 /* YYNavigationBar.h */,
-				DD1955C81DD8E0BC00FD3582 /* YYNavigationBar.m */,
-				DD1955CD1DD8E0BC00FD3582 /* YYNavigationItem.h */,
-				DD1955CE1DD8E0BC00FD3582 /* YYNavigationItem.m */,
-				DD1955C91DD8E0BC00FD3582 /* YYNavigationBarButton.h */,
-				DD1955CA1DD8E0BC00FD3582 /* YYNavigationBarButton.m */,
-			);
-			path = YYNavigationBase;
-			sourceTree = "<group>";
-		};
-		DD92E4641DF2710D001A3624 /* YYNavigationCategory */ = {
-			isa = PBXGroup;
-			children = (
-				DD1955C21DD8E0BC00FD3582 /* UIView+YYNavigationFrame.h */,
-				DD1955C31DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m */,
-				DD1955C41DD8E0BC00FD3582 /* UIViewController+YYNavigationView.h */,
-				DD1955C51DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m */,
-			);
-			path = YYNavigationCategory;
-			sourceTree = "<group>";
-		};
-		DD92E4651DF27120001A3624 /* YYNavigationAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				DD92E46A1DF2B526001A3624 /* YYNavigationPushAnimaiton.h */,
-				DD92E46B1DF2B526001A3624 /* YYNavigationPushAnimaiton.m */,
-				DD13DA1C1DDEBAB400F07AF8 /* YYNavigationPopAnimation.h */,
-				DD13DA1D1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m */,
-			);
-			path = YYNavigationAnimation;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +118,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD18478B1D51C61A00E1C1FA /* Build configuration list for PBXNativeTarget "YYNavigationExample" */;
 			buildPhases = (
+				3130DC2F02177341D0E88ABD /* [CP] Check Pods Manifest.lock */,
 				DD18476D1D51C61A00E1C1FA /* Sources */,
 				DD18476E1D51C61A00E1C1FA /* Frameworks */,
 				DD18476F1D51C61A00E1C1FA /* Resources */,
+				0DA5C698422774DB14AB1703 /* [CP] Embed Pods Frameworks */,
+				FDDD47268EAADBEC7DF6880C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,24 +180,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0DA5C698422774DB14AB1703 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3130DC2F02177341D0E88ABD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FDDD47268EAADBEC7DF6880C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DD18476D1D51C61A00E1C1FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD1955D21DD8E0BC00FD3582 /* YYNavigationBar.m in Sources */,
-				DD13DA1E1DDEBAB400F07AF8 /* YYNavigationPopAnimation.m in Sources */,
 				DD92E4691DF28A23001A3624 /* ThirdViewController.m in Sources */,
 				DD1955C01DD8E0A700FD3582 /* SecondViewController.m in Sources */,
 				DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */,
 				DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */,
 				DD1955B51DD8E08400FD3582 /* main.m in Sources */,
-				DD1955D41DD8E0BC00FD3582 /* YYNavigationController.m in Sources */,
-				DD1955D31DD8E0BC00FD3582 /* YYNavigationBarButton.m in Sources */,
-				DD92E46C1DF2B526001A3624 /* YYNavigationPushAnimaiton.m in Sources */,
-				DD1955D01DD8E0BC00FD3582 /* UIView+YYNavigationFrame.m in Sources */,
-				DD1955D51DD8E0BC00FD3582 /* YYNavigationItem.m in Sources */,
-				DD1955D11DD8E0BC00FD3582 /* UIViewController+YYNavigationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +343,7 @@
 		};
 		DD18478C1D51C61A00E1C1FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -377,6 +361,7 @@
 		};
 		DD18478D1D51C61A00E1C1FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
