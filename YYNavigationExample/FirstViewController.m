@@ -28,8 +28,7 @@
     
     // 恢复原样，方便调试
     self.naviBar.naviBgColor = [UIColor darkGrayColor];
-    self.naviItem.textColor = [UIColor whiteColor];
-    self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
+    self.naviItem.textColor = [UIColor whiteColor];    
 }
 
 - (void)viewDidLoad {

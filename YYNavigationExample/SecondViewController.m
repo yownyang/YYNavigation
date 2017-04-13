@@ -15,9 +15,22 @@
 
 @implementation SecondViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    [super viewDidDisappear:animated];
+    
+    // 恢复原样，方便调试
+    if (self.selectIndex == 15 || self.selectIndex == 16) {
+
+        self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
+    }
 }
 
 - (void)setSelectIndex:(NSUInteger)selectIndex {

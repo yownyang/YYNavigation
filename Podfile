@@ -4,6 +4,6 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'YYNavigationExample' do
-    pod 'YYNavigation'
+    pod 'YYNavigation', '0.1.3'
     #pod 'YYNavigation', :path=>'/Users/yangyang/Desktop/Personal/OC/pod/YYNavigation/'
 end
