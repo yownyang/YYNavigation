@@ -1,9 +1,10 @@
 YYNavigation
 ------
-Blog: https://yownyang.github.io/
+Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
 ##Version --- 2.0.4
 1. 支持Cocoapod 在Podfile中添加`pod 'YYNavigation'`即可
+2. 更新README.md
 
 ##Version --- 2.0.3  
 1. 添加了Push动画，可通过替换YYNavigationPushAnimation文件修改Push动画，默认为系统样式  
