@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 2.0.5 
+1. 现在可以使用0.1.4版本了
+2. 优化了一些内部实现
+
 ##Version --- 2.0.4
 1. 支持Cocoapod 在Podfile中添加`pod 'YYNavigation'`即可
 2. 更新README.md
