@@ -2,6 +2,11 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 2.0.6
+1. 适配iPhone X
+2. 现在可以使用pod 0.1.5版本了
+3. 有关iPhoneX的适配可以看[这里](https://yownyang.github.io/2017/09/17/AdaptationiPhoneX/#more)
+
 ##Version --- 2.0.5 
 1. 现在可以使用0.1.4版本了
 2. 优化了一些内部实现
@@ -56,4 +61,4 @@ Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 1. 实现了自定义NavigationBar  
 2. 实现了自动初始化返回按钮  
 3. 实现了titleView、leftButtons、rightButtons等系统有的基本功能  
-4. 后续功能，不定期更新，使用方式尽在demo中\<br>
+4. 后续功能，不定期更新，使用方式尽在demo中

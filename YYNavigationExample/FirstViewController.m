@@ -35,20 +35,63 @@
 
     [super viewDidLoad];
     
+//    用于在iPhone X中标示下边的操作区
+    self.view.backgroundColor = [UIColor brownColor];
+    
     self.naviItem.title = @"Demo";
     
     //    系统会自动调节ScrollView的Insets，在Push界面，POP时也都会，所以如果哪个界面，设置了系统导航栏为隐藏，那么就设置这个为NO，否则会出现很多奇奇怪怪的情况
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        
+//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     //    懒得写getter方法了。。。。
-    self.textArray = [NSArray arrayWithObjects:@"Category类中属性的用法", @"是否隐藏自定义NavigationBar", @"设置NavigationBar的背景色", @"设置NavigationBar的透明度", @"设置NavigationBar不影响子视图显示的透明度", @"设置标题", @"自定义标题View", @"重写返回按钮", @"设置返回按钮是否隐藏", @"当前界面以及新生成界面的文本的颜色", @"分割线颜色", @"分割线图片", @"自定义左边按钮集合", @"自定义右边按钮集合", @"代码初始化YYNavigationController", @"全屏侧滑返回", @"无侧滑返回", nil];
+    self.textArray = [NSArray arrayWithObjects:
+                      @"Category类中属性的用法",
+                      @"是否隐藏自定义NavigationBar",
+                      @"设置NavigationBar的背景色",
+                      @"设置NavigationBar的透明度",
+                      @"设置NavigationBar不影响子视图显示的透明度",
+                      @"设置标题",
+                      @"自定义标题View",
+                      @"重写返回按钮",
+                      @"设置返回按钮是否隐藏",
+                      @"当前界面以及新生成界面的文本的颜色",
+                      @"分割线颜色",
+                      @"分割线图片",
+                      @"左边按钮集合",
+                      @"右边按钮集合",
+                      @"代码初始化YYNavigationController",
+                      @"全屏侧滑返回",
+                      @"无侧滑返回",
+                      nil];
     
-    // 设置view时需要从64算起(storyboard/xib同理), 我试验了从0开始，发现可以实现类似系统的translucent属性，但在导航栏隐藏时，会出现导航栏位置黑条的问题。鱼和熊掌不可兼得啊。^_^
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height - 64)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 }
+
+// 这里可以使用代码获得正确的安全区域
+// 在viewDidAppear中也可以
+#ifdef NSFoundationVersionNumber10_10_Max
+- (void)viewSafeAreaInsetsDidChange {
+    
+    [super viewSafeAreaInsetsDidChange];
+    
+    CGRect safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame;
+    
+//    只有系统的导航栏才会让safe area变小
+//    所以自定义导航栏是在safe area中的
+//    所以tableview的属性要进行修改
+    self.tableView.Y = safeAreaFrame.origin.y + YYNaviBarHeight;
+    self.tableView.height = safeAreaFrame.size.height - YYNaviBarHeight;
+}
+#endif
 
 #pragma mark - TableView
 

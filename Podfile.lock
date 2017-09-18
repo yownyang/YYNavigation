@@ -1,24 +1,24 @@
 PODS:
-  - YYNavigation (0.1.4):
-    - YYNavigation/YYNavigationAnimation (= 0.1.4)
-    - YYNavigation/YYNavigationBase (= 0.1.4)
-    - YYNavigation/YYNavigationCategory (= 0.1.4)
-    - YYNavigation/YYNavigationMacro (= 0.1.4)
-  - YYNavigation/YYNavigationAnimation (0.1.4):
+  - YYNavigation (0.1.5):
+    - YYNavigation/YYNavigationAnimation (= 0.1.5)
+    - YYNavigation/YYNavigationBase (= 0.1.5)
+    - YYNavigation/YYNavigationCategory (= 0.1.5)
+    - YYNavigation/YYNavigationMacro (= 0.1.5)
+  - YYNavigation/YYNavigationAnimation (0.1.5):
     - YYNavigation/YYNavigationCategory
-  - YYNavigation/YYNavigationBase (0.1.4):
+  - YYNavigation/YYNavigationBase (0.1.5):
     - YYNavigation/YYNavigationAnimation
     - YYNavigation/YYNavigationCategory
     - YYNavigation/YYNavigationMacro
-  - YYNavigation/YYNavigationCategory (0.1.4)
-  - YYNavigation/YYNavigationMacro (0.1.4)
+  - YYNavigation/YYNavigationCategory (0.1.5)
+  - YYNavigation/YYNavigationMacro (0.1.5)
 
 DEPENDENCIES:
-  - YYNavigation (= 0.1.4)
+  - YYNavigation (= 0.1.5)
 
 SPEC CHECKSUMS:
-  YYNavigation: bb92c6ec83e9eeb51907bd1098c3edd33b802a10
+  YYNavigation: cfb8f1b3a89aaa67840e1d6446e38ec8217cc892
 
-PODFILE CHECKSUM: b39e313b0d19adc4602c561d1515e1c0a9474e2a
+PODFILE CHECKSUM: 3cd0359e632757126247463a1d73dbdc7807ff8f
 
 COCOAPODS: 1.2.0.beta.3
