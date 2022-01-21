@@ -97,11 +97,11 @@
     } else if (selectIndex == 10) {
         
         self.naviItem.title = @"分割线颜色";
-        self.naviItem.lineColor = [UIColor greenColor];
+        self.naviItem.separatorLineColor = [UIColor greenColor];
     }  else if (selectIndex == 11) {
         
         self.naviItem.title = @"分割线图片";
-        self.naviItem.lineImageName = @"line";
+        self.naviItem.separatorLineImage = [UIImage imageNamed:@"line"];
     } else if (selectIndex == 12) {
         
         self.naviItem.title = @"自定义左按钮集合";
