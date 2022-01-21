@@ -4,5 +4,5 @@ platform :ios, '8.0'
 # use_frameworks!
 
 target 'YYNavigationExample' do
-    pod 'YYNavigation', '0.1.7'
+    pod 'YYNavigation', '0.1.8'
 end
