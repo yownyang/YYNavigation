@@ -22,15 +22,6 @@
 
 @implementation FirstViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-    
-    // 恢复原样，方便调试
-    self.naviBar.naviBgColor = [UIColor darkGrayColor];
-    self.naviItem.textColor = [UIColor whiteColor];    
-}
-
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -43,15 +34,14 @@
     //    系统会自动调节ScrollView的Insets，在Push界面，POP时也都会，所以如果哪个界面，设置了系统导航栏为隐藏，那么就设置这个为NO，否则会出现很多奇奇怪怪的情况
     if (@available(iOS 11.0, *)) {
         
-//        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
     //    懒得写getter方法了。。。。
-    self.textArray = [NSArray arrayWithObjects:
-                      @"Category类中属性的用法",
+    self.textArray = @[@"Category类中属性的用法",
                       @"是否隐藏自定义NavigationBar",
                       @"设置NavigationBar的背景色",
                       @"设置NavigationBar的透明度",
@@ -67,10 +57,9 @@
                       @"右边按钮集合",
                       @"代码初始化YYNavigationController",
                       @"全屏侧滑返回",
-                      @"无侧滑返回",
-                      nil];
+                      @"无侧滑返回"];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height - 64)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, YYNaviBarHeight, self.view.width, self.view.height - YYNaviBarHeight)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
@@ -82,14 +71,10 @@
 - (void)viewSafeAreaInsetsDidChange {
     
     [super viewSafeAreaInsetsDidChange];
-    
+
     CGRect safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame;
-    
-//    只有系统的导航栏才会让safe area变小
-//    所以自定义导航栏是在safe area中的
-//    所以tableview的属性要进行修改
-    self.tableView.Y = safeAreaFrame.origin.y + YYNaviBarHeight;
-    self.tableView.height = safeAreaFrame.size.height - YYNaviBarHeight;
+
+    self.tableView.height = safeAreaFrame.size.height - 44;
 }
 #endif
 
@@ -136,6 +121,7 @@
 
         UITabBarController *tabbarController = [[UITabBarController alloc] init];
         tabbarController.viewControllers = @[navigationController1, navigationController2];
+        tabbarController.modalPresentationStyle = UIModalPresentationFullScreen;
         
         // 如果跳转的下个界面是tabbarController，必须用present推送
         [self presentViewController:tabbarController animated:YES completion:nil];

@@ -27,10 +27,7 @@
     [super viewDidDisappear:animated];
     
     // 恢复原样，方便调试
-    if (self.selectIndex == 15 || self.selectIndex == 16) {
-
-        self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
-    }
+    self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
 }
 
 - (void)setSelectIndex:(NSUInteger)selectIndex {
@@ -81,7 +78,8 @@
     } else if (selectIndex == 7) {
         
         self.naviItem.title = @"重写返回按钮";
-        self.naviItem.backButton = [YYNavigationBarButton buttonWithSize:CGSizeZero image:@"back" title:@"返回" handler:^(UIButton *sender) {
+        self.naviItem.textColor = [UIColor redColor];
+        self.naviItem.backButton = [YYNavigationBarButton buttonWithSize:CGSizeZero image:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
         }];
