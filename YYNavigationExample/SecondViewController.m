@@ -22,30 +22,38 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
     
     // 恢复原样，方便调试
-    self.naviController.gestureType = kYYNavigationGestureScreenEdgeType;
+    self.yy_navigationController.gestureType = kYYNavigationGestureScreenEdgeType;
 }
 
 - (void)setSelectIndex:(NSUInteger)selectIndex {
     
     if (selectIndex == 0) {
         
-        self.naviItem.title = @"四种调用方式的结果是一样的";
+        self.yy_navigationItem.title = @"四种调用方式的结果是一样的";
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 300)];
         
         label.numberOfLines = 0;
         
-        label.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", self.naviItem.title, self.naviBar.naviItem.title, self.navigationController.naviItem.title, self.navigationController.naviBar.naviItem.title];
+        label.text = [NSString stringWithFormat:@"%@\n%@\n%@\n%@", self.yy_navigationItem.title, self.yy_navigationBar.yy_navigationItem.title, self.navigationController.yy_navigationItem.title, self.navigationController.yy_navigationBar.yy_navigationItem.title];
         [self.view addSubview:label];
     } else if (selectIndex == 1) {
         
-        self.naviItem.title = @"隐藏/显示";
-        self.naviBar.isHiddenNaviBar = YES;
+        self.yy_navigationItem.title = @"隐藏/显示";
+        self.yy_navigationBar.isHiddenNaviBar = YES;
         
         UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 200, 300)];
         [sw addTarget:self action:@selector(onOff1:) forControlEvents:UIControlEventTouchUpInside];
@@ -53,58 +61,58 @@
         
     } else if (selectIndex == 2) {
         
-        self.naviItem.title = @"设置naviBgColor";
-        self.naviBar.naviBgColor = [UIColor blueColor];
+        self.yy_navigationItem.title = @"设置naviBgColor";
+        self.yy_navigationBar.naviBgColor = [UIColor blueColor];
     } else if (selectIndex == 3) {
         
-        self.naviItem.title = @"半透明(子视图一起透明)";
-        self.naviBar.naviAlpha = 0.5;
+        self.yy_navigationItem.title = @"半透明(子视图一起透明)";
+        self.yy_navigationBar.naviAlpha = 0.5;
     } else if (selectIndex == 4) {
         
-        self.naviItem.title = @"半透明(子视图不会透明)";
-        self.naviBar.naviSuperAlpha = 0.5;
+        self.yy_navigationItem.title = @"半透明(子视图不会透明)";
+        self.yy_navigationBar.naviSuperAlpha = 0.5;
     } else if (selectIndex == 5) {
         
-        self.naviItem.title = @"自定义标题";
+        self.yy_navigationItem.title = @"自定义标题";
     } else if (selectIndex == 6) {
         
-        self.naviItem.title = @"自定义titleview";
+        self.yy_navigationItem.title = @"自定义titleview";
         
         UISearchBar *sb = [[UISearchBar alloc] init];
         // 记得将自定义titleview的颜色与naviBgColor颜色一致哦
         sb.barTintColor = [UIColor darkGrayColor];
-        self.naviItem.titleView = sb;
+        self.yy_navigationItem.titleView = sb;
         
     } else if (selectIndex == 7) {
         
-        self.naviItem.title = @"重写返回按钮";
-        self.naviItem.textColor = [UIColor redColor];
-        self.naviItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
+        self.yy_navigationItem.title = @"重写返回按钮";
+        self.yy_navigationItem.textColor = [UIColor redColor];
+        self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
         }];
         
     } else if (selectIndex == 8) {
         
-        self.naviItem.title = @"是否隐藏返回按钮";
+        self.yy_navigationItem.title = @"是否隐藏返回按钮";
         UISwitch *sw = [[UISwitch alloc] initWithFrame:CGRectMake(100, 100, 200, 300)];
         [sw addTarget:self action:@selector(onOff2:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:sw];
     } else if (selectIndex == 9) {
         
-        self.naviItem.title = @"设置本界面以及将要创建界面的文本颜色";
-        self.naviItem.textColor = [UIColor blueColor];
+        self.yy_navigationItem.title = @"设置本界面以及将要创建界面的文本颜色";
+        self.yy_navigationItem.textColor = [UIColor blueColor];
     } else if (selectIndex == 10) {
         
-        self.naviItem.title = @"分割线颜色";
-        self.naviItem.separatorLineColor = [UIColor greenColor];
+        self.yy_navigationItem.title = @"分割线颜色";
+        self.yy_navigationItem.separatorLineColor = [UIColor greenColor];
     }  else if (selectIndex == 11) {
         
-        self.naviItem.title = @"分割线图片";
-        self.naviItem.separatorLineImage = [UIImage imageNamed:@"line"];
+        self.yy_navigationItem.title = @"分割线图片";
+        self.yy_navigationItem.separatorLineImage = [UIImage imageNamed:@"line"];
     } else if (selectIndex == 12) {
         
-        self.naviItem.title = @"自定义左按钮集合";
+        self.yy_navigationItem.title = @"自定义左按钮集合";
 
         YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"左按钮1" handler:^(UIButton *sender) {
         
@@ -113,35 +121,35 @@
         
         YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithTitle:@"左按钮2" handler:^(UIButton *sender) {
         
-            self.naviItem.title = @"自定义左按钮2";
+            self.yy_navigationItem.title = @"自定义左按钮2";
         }];
         
-        self.naviItem.leftButtons = @[b1, b2];
+        self.yy_navigationItem.leftButtons = @[b1, b2];
 
     } else if (selectIndex == 13) {
         
-        self.naviItem.title = @"自定义右按钮集合";
+        self.yy_navigationItem.title = @"自定义右按钮集合";
 
         YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithTitle:@"右按钮1" handler:^(UIButton *sender) {
             
-            self.naviItem.title = @"自定义右按钮1";
+            self.yy_navigationItem.title = @"自定义右按钮1";
         }];
         
         YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithTitle:@"右按钮2" handler:^(UIButton *sender) {
             
-            self.naviItem.title = @"自定义右按钮2";
+            self.yy_navigationItem.title = @"自定义右按钮2";
         }];
         
-        self.naviItem.rightButtons = @[b3, b4];
+        self.yy_navigationItem.rightButtons = @[b3, b4];
     } else if (selectIndex == 15) {
         
-        self.naviItem.title = @"全屏侧滑返回";
-        self.naviController.gestureType = kYYNavigationGestureFullScreenType;
+        self.yy_navigationItem.title = @"全屏侧滑返回";
+        self.yy_navigationController.gestureType = kYYNavigationGestureFullScreenType;
         
     } else if (selectIndex == 16) {
         
-        self.naviItem.title = @"无侧滑返回";
-        self.naviController.gestureType = kYYNavigationGestureNoneType;
+        self.yy_navigationItem.title = @"无侧滑返回";
+        self.yy_navigationController.gestureType = kYYNavigationGestureNoneType;
     }
 }
 
@@ -149,12 +157,12 @@
 
 - (void)onOff1:(UISwitch *)swicth {
     
-    self.naviBar.isHiddenNaviBar = !swicth.isOn;
+    self.yy_navigationBar.isHiddenNaviBar = !swicth.isOn;
 }
 
 - (void)onOff2:(UISwitch *)swicth {
     
-    self.naviItem.isHiddenBackButton = swicth.isOn;
+    self.yy_navigationItem.isHiddenBackButton = swicth.isOn;
 }
 
 @end

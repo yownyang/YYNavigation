@@ -30,7 +30,7 @@
     self.view.backgroundColor = [UIColor brownColor];
     
     // 设置本界面的标题
-    self.naviItem.title = @"Demo";
+    self.yy_navigationItem.title = @"Demo";
     
     //系统会自动调节ScrollView的Insets，在Push界面，POP时也都会，所以如果哪个界面，设置了系统导航栏为隐藏，那么就设置这个为NO，否则会出现很多奇奇怪怪的情况
     if (@available(iOS 11.0, *)) {
