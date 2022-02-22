@@ -79,7 +79,7 @@
         
         self.naviItem.title = @"重写返回按钮";
         self.naviItem.textColor = [UIColor redColor];
-        self.naviItem.backButton = [YYNavigationBarButton buttonWithSize:CGSizeZero image:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
+        self.naviItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
         }];
@@ -106,12 +106,12 @@
         
         self.naviItem.title = @"自定义左按钮集合";
 
-        YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithSize:CGSizeZero title:@"左按钮1" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"左按钮1" handler:^(UIButton *sender) {
         
             [self.navigationController popViewControllerAnimated:YES];
         }];
         
-        YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithSize:CGSizeZero title:@"左按钮2" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithTitle:@"左按钮2" handler:^(UIButton *sender) {
         
             self.naviItem.title = @"自定义左按钮2";
         }];
@@ -122,12 +122,12 @@
         
         self.naviItem.title = @"自定义右按钮集合";
 
-        YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithSize:CGSizeZero title:@"右按钮1" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithTitle:@"右按钮1" handler:^(UIButton *sender) {
             
             self.naviItem.title = @"自定义右按钮1";
         }];
         
-        YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithSize:CGSizeZero title:@"右按钮2" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithTitle:@"右按钮2" handler:^(UIButton *sender) {
             
             self.naviItem.title = @"自定义右按钮2";
         }];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0742C4B827C4901F006C61B5 /* UIImage+YYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */; };
 		0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */; };
 		DD1955AD1DD8E06F00FD3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1955AB1DD8E06F00FD3582 /* Main.storyboard */; };
 		DD1955B51DD8E08400FD3582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B01DD8E08400FD3582 /* main.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0742C4B627C4901F006C61B5 /* UIImage+YYHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+YYHelper.h"; path = "Category/UIImage+YYHelper.h"; sourceTree = "<group>"; };
+		0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+YYHelper.m"; path = "Category/UIImage+YYHelper.m"; sourceTree = "<group>"; };
 		3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYNavigationExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0742C4B527C48FFA006C61B5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0742C4B627C4901F006C61B5 /* UIImage+YYHelper.h */,
+				0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		CC5DCCBEDE74565C8786DA9B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +89,7 @@
 		DD1847731D51C61A00E1C1FA /* YYNavigationExample */ = {
 			isa = PBXGroup;
 			children = (
+				0742C4B527C48FFA006C61B5 /* Category */,
 				DD1955B81DD8E0A700FD3582 /* AppDelegate.h */,
 				DD1955B91DD8E0A700FD3582 /* AppDelegate.m */,
 				DD1955BA1DD8E0A700FD3582 /* FirstViewController.h */,
@@ -121,7 +134,6 @@
 				DD18476D1D51C61A00E1C1FA /* Sources */,
 				DD18476E1D51C61A00E1C1FA /* Frameworks */,
 				DD18476F1D51C61A00E1C1FA /* Resources */,
-				0DA5C698422774DB14AB1703 /* [CP] Embed Pods Frameworks */,
 				FDDD47268EAADBEC7DF6880C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -154,6 +166,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -180,34 +193,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0DA5C698422774DB14AB1703 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3130DC2F02177341D0E88ABD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YYNavigationExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FDDD47268EAADBEC7DF6880C /* [CP] Copy Pods Resources */ = {
@@ -216,13 +217,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/YYNavigation/YYNavigation.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/YYNavigation.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -237,6 +241,7 @@
 				DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */,
 				DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */,
 				DD1955B51DD8E08400FD3582 /* main.m in Sources */,
+				0742C4B827C4901F006C61B5 /* UIImage+YYHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,10 +365,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2022.02.22;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.YYNavigation;
 				PRODUCT_NAME = YYNavigationExample;
 				PROVISIONING_PROFILE = "";
@@ -378,10 +385,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2022.02.22;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 3.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.self.YYNavigation;
 				PRODUCT_NAME = YYNavigationExample;
 				PROVISIONING_PROFILE = "";

@@ -10,12 +10,12 @@
 #import "SecondViewController.h"
 #import "ThirdViewController.h"
 
-#import "YYNavigation.h"
+#import <YYNavigation/YYNavigation.h>
+#import <Masonry/Masonry.h>
 
-@interface FirstViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface FirstViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) UITableView *tableView;
-
 @property (nonatomic, copy) NSArray *textArray;
 
 @end
@@ -26,21 +26,20 @@
 
     [super viewDidLoad];
     
-//    用于在iPhone X中标示下边的操作区
+    // 用于在iPhone X中标示下边的操作区
     self.view.backgroundColor = [UIColor brownColor];
     
+    // 设置本界面的标题
     self.naviItem.title = @"Demo";
     
-    //    系统会自动调节ScrollView的Insets，在Push界面，POP时也都会，所以如果哪个界面，设置了系统导航栏为隐藏，那么就设置这个为NO，否则会出现很多奇奇怪怪的情况
+    //系统会自动调节ScrollView的Insets，在Push界面，POP时也都会，所以如果哪个界面，设置了系统导航栏为隐藏，那么就设置这个为NO，否则会出现很多奇奇怪怪的情况
     if (@available(iOS 11.0, *)) {
-        
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
-        
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-    //    懒得写getter方法了。。。。
+    //  懒得写getter方法了。。。。
     self.textArray = @[@"Category类中属性的用法",
                       @"是否隐藏自定义NavigationBar",
                       @"设置NavigationBar的背景色",
@@ -59,55 +58,62 @@
                       @"全屏侧滑返回",
                       @"无侧滑返回"];
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, YYNaviBarHeight, self.view.width, self.view.height - YYNaviBarHeight)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 }
 
-// 这里可以使用代码获得正确的安全区域
-// 在viewDidAppear中也可以
-#ifdef NSFoundationVersionNumber10_10_Max
-- (void)viewSafeAreaInsetsDidChange {
-    
-    [super viewSafeAreaInsetsDidChange];
+//// 这个是使用Masonry布局。系统不会考虑自定义导航栏占得位置，这个44是自定义导航栏的实际高度，所以要向下平移44
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        if (@available(iOS 11.0, *)) {
+//            make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(44);
+//            make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
+//            make.left.mas_equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+//            make.right.mas_equalTo(self.view.mas_safeAreaLayoutGuideRight);
+//        } else {
+//            make.top.mas_equalTo(self.view.mas_top).offset(44);
+//            make.bottom.mas_equalTo(self.view.mas_bottom);
+//            make.left.mas_equalTo(self.view.mas_left);
+//            make.right.mas_equalTo(self.view.mas_right);
+//        }
+//    }];
+//}
 
-    CGRect safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame;
-
-    self.tableView.height = safeAreaFrame.size.height - 44;
+// 这个是使用Frame布局。系统不会考虑自定义导航栏占得位置，44是自定义导航栏的实际高度，所以要向下平移44
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (@available(iOS 11.0, *)) {
+        CGRect safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame;
+        self.tableView.frame = CGRectMake(0, safeAreaFrame.origin.y + 44, safeAreaFrame.size.width, safeAreaFrame.size.height - 44);
+    } else {
+        self.tableView.frame = CGRectMake(0, YYNaviBarHeight, self.view.width, self.view.height - YYNaviBarHeight);
+    }
 }
-#endif
 
 #pragma mark - TableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     return self.textArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
     if (!cell) {
-        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    
     cell.textLabel.text = self.textArray[indexPath.row];
-    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.row == 14) {
-        
         ThirdViewController *viewController1 = [[ThirdViewController alloc] init];
         ThirdViewController *viewController2 = [[ThirdViewController alloc] init];
 
@@ -122,7 +128,6 @@
         UITabBarController *tabbarController = [[UITabBarController alloc] init];
         tabbarController.viewControllers = @[navigationController1, navigationController2];
         tabbarController.modalPresentationStyle = UIModalPresentationFullScreen;
-        
         // 如果跳转的下个界面是tabbarController，必须用present推送
         [self presentViewController:tabbarController animated:YES completion:nil];
        
@@ -131,7 +136,6 @@
         SecondViewController *sc = [SecondViewController new];
         sc.view.backgroundColor = [UIColor brownColor];
         [self.navigationController pushViewController:sc animated:YES];
-        
         // 属性赋值需放在push后面
         sc.selectIndex = indexPath.row;
     }

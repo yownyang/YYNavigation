@@ -2,6 +2,11 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.0
+1. 在AppDelegate中展示使用appearance全局设置属性
+1. 在FirstViewController中展示使用layout和frame布局，需要注意的点
+
+
 ##Version --- 2.0.6
 1. 适配iPhone X
 2. 现在可以使用pod 0.1.5版本了

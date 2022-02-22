@@ -1,4 +1,5 @@
 # Xcode
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -7,18 +8,22 @@
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+DerivedData
 xcuserdata
 xcshareddata
-*.moved-aside
-DerivedData
-.idea/
-*.hmap
+*.xcuserstate
 *.xccheckout
-.DS_Store
+*.moved-aside
+*.hmap
+*.xcworkspacedata
+.idea/
 
 # CocoaPods
-Pods
+Gemfile.lock
+Pods/
+
+# Mac OS X
+.DS_Store
 
 # IPA
 *.ipa
-

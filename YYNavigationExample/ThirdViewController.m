@@ -22,7 +22,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.naviItem.title = @"ThirdViewController";
-    self.naviItem.backButton = [YYNavigationBarButton buttonWithSize:CGSizeZero image:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
+    self.naviItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
