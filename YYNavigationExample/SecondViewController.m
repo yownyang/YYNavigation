@@ -100,7 +100,7 @@
         [self.view addSubview:sw];
     } else if (selectIndex == 9) {
         
-        self.yy_navigationItem.title = @"设置本界面以及将要创建界面的文本颜色";
+        self.yy_navigationItem.title = @"设置本界面的文本颜色";
         self.yy_navigationItem.textColor = [UIColor blueColor];
     } else if (selectIndex == 10) {
         

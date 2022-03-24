@@ -2,6 +2,9 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.1
+1. 修复了标题栏过长时遮盖左右按钮的问题
+
 ##Version --- 3.0.0
 1. 在AppDelegate中展示使用appearance全局设置属性
 2. 在FirstViewController中展示使用layout和frame布局，需要注意的点
