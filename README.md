@@ -4,12 +4,12 @@ Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
 ##Version --- 3.0.1
 1. 修复了标题栏过长时遮盖左右按钮的问题
+2. 不要在push前使用yy_navigationController和yy_navigaitonBar和yy_navigationItem，他们那个时候是不存在的
 
 ##Version --- 3.0.0
 1. 在AppDelegate中展示使用appearance全局设置属性
 2. 在FirstViewController中展示使用layout和frame布局，需要注意的点
 3. 规范起名，将naviController/naviBar/naviItem分别改为yy_navigationController/yy_navigaitonBar/yy_navigationItem
-4. 在viewDidLoad时是不存在yy_navigationController和yy_navigaitonBar和yy_navigationItem的，最早出现的生命周期是在viewWillAppear中
 
 ##Version --- 2.0.6
 1. 适配iPhone X

@@ -134,9 +134,8 @@
     } else {
         
         SecondViewController *sc = [SecondViewController new];
-        sc.view.backgroundColor = [UIColor brownColor];
         [self.navigationController pushViewController:sc animated:YES];
-        // 属性赋值需放在push后面
+        // 属性赋值需放在push后面，因为在属性设置用使用了yy_navigationController和yy_navigaitonBar和yy_navigationItem，那个时候这几个是不存在的
         sc.selectIndex = indexPath.row;
     }
 }
