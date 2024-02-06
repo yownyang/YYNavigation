@@ -56,7 +56,8 @@
                       @"右边按钮集合",
                       @"代码初始化YYNavigationController",
                       @"全屏侧滑返回",
-                      @"无侧滑返回"];
+                      @"无侧滑返回",
+                      @"一次性返回多个界面"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableView.delegate = self;
@@ -134,9 +135,8 @@
     } else {
         
         SecondViewController *sc = [SecondViewController new];
-        [self.navigationController pushViewController:sc animated:YES];
-        // 属性赋值需放在push后面，因为在属性设置用使用了yy_navigationController和yy_navigaitonBar和yy_navigationItem，那个时候这几个是不存在的
         sc.selectIndex = indexPath.row;
+        [self.navigationController pushViewController:sc animated:YES];
     }
 }
 

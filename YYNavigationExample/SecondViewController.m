@@ -21,6 +21,7 @@
     
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor brownColor];
+    [self reloadView:self.selectIndex];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,8 +40,7 @@
     self.yy_navigationController.gestureType = kYYNavigationGestureScreenEdgeType;
 }
 
-- (void)setSelectIndex:(NSUInteger)selectIndex {
-    
+- (void)reloadView:(NSUInteger)selectIndex {
     if (selectIndex == 0) {
         
         self.yy_navigationItem.title = @"四种调用方式的结果是一样的";

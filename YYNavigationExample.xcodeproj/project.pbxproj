@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0742C4B827C4901F006C61B5 /* UIImage+YYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */; };
+		078B7C3E2B71F93700566458 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078B7C3D2B71F93700566458 /* FourthViewController.m */; };
 		0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */; };
 		DD1955AD1DD8E06F00FD3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1955AB1DD8E06F00FD3582 /* Main.storyboard */; };
 		DD1955B51DD8E08400FD3582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B01DD8E08400FD3582 /* main.m */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		0742C4B627C4901F006C61B5 /* UIImage+YYHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+YYHelper.h"; path = "Category/UIImage+YYHelper.h"; sourceTree = "<group>"; };
 		0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+YYHelper.m"; path = "Category/UIImage+YYHelper.m"; sourceTree = "<group>"; };
+		078B7C3C2B71F93700566458 /* FourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		078B7C3D2B71F93700566458 /* FourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYNavigationExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.debug.xcconfig"; sourceTree = "<group>"; };
 		BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				DD1955BD1DD8E0A700FD3582 /* SecondViewController.m */,
 				DD92E4671DF28A23001A3624 /* ThirdViewController.h */,
 				DD92E4681DF28A23001A3624 /* ThirdViewController.m */,
+				078B7C3C2B71F93700566458 /* FourthViewController.h */,
+				078B7C3D2B71F93700566458 /* FourthViewController.m */,
 				DD1955B61DD8E08F00FD3582 /* Assets.xcassets */,
 				DD1955AB1DD8E06F00FD3582 /* Main.storyboard */,
 				DD1955AE1DD8E07700FD3582 /* Supporting Files */,
@@ -241,6 +246,7 @@
 				DD1955BE1DD8E0A700FD3582 /* AppDelegate.m in Sources */,
 				DD1955BF1DD8E0A700FD3582 /* FirstViewController.m in Sources */,
 				DD1955B51DD8E08400FD3582 /* main.m in Sources */,
+				078B7C3E2B71F93700566458 /* FourthViewController.m in Sources */,
 				0742C4B827C4901F006C61B5 /* UIImage+YYHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,7 +377,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.YYNavigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yown.YYNavigation;
 				PRODUCT_NAME = YYNavigationExample;
 				PROVISIONING_PROFILE = "";
 			};
@@ -391,7 +397,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 3.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.self.YYNavigation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yown.YYNavigation;
 				PRODUCT_NAME = YYNavigationExample;
 				PROVISIONING_PROFILE = "";
 			};
