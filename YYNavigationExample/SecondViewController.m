@@ -7,6 +7,8 @@
 //
 
 #import "SecondViewController.h"
+#import "FourthViewController.h"
+
 #import "YYNavigation.h"
 
 @interface SecondViewController ()
@@ -43,7 +45,7 @@
 - (void)reloadView:(NSUInteger)selectIndex {
     if (selectIndex == 0) {
         
-        self.yy_navigationItem.title = @"四种调用方式的结果是一样的";
+        self.yy_navigationItem.title = @"Category类中属性的用法";
         
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 200, 300)];
         
@@ -87,7 +89,7 @@
     } else if (selectIndex == 7) {
         
         self.yy_navigationItem.title = @"重写返回按钮";
-        self.yy_navigationItem.textColor = [UIColor redColor];
+        self.yy_navigationItem.textColor = [UIColor blueColor];
         self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
@@ -115,12 +117,12 @@
         
         self.yy_navigationItem.title = @"自定义左按钮集合";
 
-        YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"左按钮1" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"left1" handler:^(UIButton *sender) {
         
             [self.navigationController popViewControllerAnimated:YES];
         }];
         
-        YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithTitle:@"左按钮2" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithTitle:@"left2" handler:^(UIButton *sender) {
         
             self.yy_navigationItem.title = @"自定义左按钮2";
         }];
@@ -131,12 +133,12 @@
         
         self.yy_navigationItem.title = @"自定义右按钮集合";
 
-        YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithTitle:@"右按钮1" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithTitle:@"right1" handler:^(UIButton *sender) {
             
             self.yy_navigationItem.title = @"自定义右按钮1";
         }];
         
-        YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithTitle:@"右按钮2" handler:^(UIButton *sender) {
+        YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithTitle:@"right2" handler:^(UIButton *sender) {
             
             self.yy_navigationItem.title = @"自定义右按钮2";
         }];
@@ -151,6 +153,10 @@
         
         self.yy_navigationItem.title = @"无侧滑返回";
         self.yy_navigationController.gestureType = kYYNavigationGestureNoneType;
+    } else if (selectIndex == 17) {
+        self.yy_navigationItem.title = @"中转界面";
+        FourthViewController *sc = [FourthViewController new];
+        [self.navigationController pushViewController:sc animated:YES];
     }
 }
 
