@@ -2,15 +2,15 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.3
+1. YYNavigation发布0.2.4版本
+2. 内存问题处理
+
 ##Version --- 3.0.2
 1. YYNavigation发布0.2.3版本
 2. 将侧滑成功的边界值改为30%
 3. 修复popToRoot或者popToViewController的导航栏显示bug
 4. 实现setViewControllers的导航栏修改
-
-##Version --- 3.0.1
-1. 修复了标题栏过长时遮盖左右按钮的问题
-2. 不要在push前使用yy_navigationController和yy_navigaitonBar和yy_navigationItem，他们那个时候是不存在的
 
 ##Version --- 3.0.0
 1. 在AppDelegate中展示使用appearance全局设置属性
