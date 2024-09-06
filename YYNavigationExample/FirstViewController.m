@@ -57,7 +57,8 @@
                       @"代码初始化YYNavigationController",
                       @"全屏侧滑返回",
                       @"无侧滑返回",
-                      @"一次性返回多个界面"];
+                      @"一次性返回多个界面",
+                      @"设置本界面的文本字体"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableView.delegate = self;

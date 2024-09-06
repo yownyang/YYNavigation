@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.4
+1. YYNavigation发布0.2.6版本
+2. 添加字体调整
+
 ##Version --- 3.0.3
 1. YYNavigation发布0.2.4版本
 2. 内存问题处理

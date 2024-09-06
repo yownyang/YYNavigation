@@ -89,7 +89,6 @@
     } else if (selectIndex == 7) {
         
         self.yy_navigationItem.title = @"重写返回按钮";
-        self.yy_navigationItem.textColor = [UIColor blueColor];
         self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
@@ -157,6 +156,9 @@
         self.yy_navigationItem.title = @"中转界面";
         FourthViewController *sc = [FourthViewController new];
         [self.navigationController pushViewController:sc animated:YES];
+    } else if (selectIndex == 18) {
+        self.yy_navigationItem.title = @"设置本界面的文本字体";
+        self.yy_navigationItem.textFont = [UIFont boldSystemFontOfSize:22];
     }
 }
 

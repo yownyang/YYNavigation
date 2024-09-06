@@ -162,7 +162,7 @@
 				TargetAttributes = {
 					DD1847701D51C61A00E1C1FA = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = SHD892Y9KD;
+						DevelopmentTeam = 2Q5N65WG6P;
 					};
 				};
 			};
@@ -372,6 +372,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 2022.02.22;
+				DEVELOPMENT_TEAM = 2Q5N65WG6P;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -392,6 +393,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 2022.02.22;
+				DEVELOPMENT_TEAM = 2Q5N65WG6P;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/YYNavigationExample/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

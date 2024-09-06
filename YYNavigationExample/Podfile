@@ -1,8 +1,0 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, '8.0'
-# use_frameworks!
-
-target 'YYNavigationExample' do
-    pod 'YYNavigation', '0.1.8'
-end
