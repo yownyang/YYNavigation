@@ -89,7 +89,7 @@
     } else if (selectIndex == 7) {
         
         self.yy_navigationItem.title = @"重写返回按钮";
-        self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
+        self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"app_back"] title:@"返回" handler:^(UIButton *sender) {
             
             [self.navigationController popViewControllerAnimated:YES];
         }];
