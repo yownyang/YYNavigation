@@ -1,6 +1,6 @@
 #source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '12.0'
 
 target 'YYNavigationExample' do
    pod 'YYNavigation', '0.2.8'
