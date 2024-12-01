@@ -2,6 +2,15 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.6
+1. YYNavigation发布0.3.0版本
+2. 调整侧滑返回进度为15%
+
+##Version --- 3.0.5
+1. YYNavigation发布0.2.9版本
+2. 添加返回按钮全局
+3. 在iOS18及以上，侧滑时，tabbar会直接全部显示，所以添加透明度渐变的动画
+
 ##Version --- 3.0.4
 1. YYNavigation发布0.2.8版本
 2. 添加字体调整
