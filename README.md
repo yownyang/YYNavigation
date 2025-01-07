@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.8
+1. YYNavigation发布0.3.2版本
+2. 修复setViewControllers时的问题
+
 ##Version --- 3.0.7
 1. YYNavigation发布0.3.1版本
 2. 修复在iOS 17上，连续pop时的崩溃问题

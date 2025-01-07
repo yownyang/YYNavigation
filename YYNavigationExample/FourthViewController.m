@@ -82,11 +82,14 @@
 }
 
 - (void)clickSetViewController {
-    FirstViewController *vc1 = [FirstViewController new];
-    FourthViewController *vc2 = [FourthViewController new];
-    SecondViewController *vc3 = [SecondViewController new];
+//    FirstViewController *vc1 = [FirstViewController new];
+//    FourthViewController *vc2 = [FourthViewController new];
+//    SecondViewController *vc3 = [SecondViewController new];
+//    
+//    [self.navigationController setViewControllers:@[vc1, vc2, vc3] animated:YES];
     
-    [self.navigationController setViewControllers:@[vc1, vc2, vc3] animated:YES];
+    NSMutableArray *array = [NSMutableArray arrayWithObject:self.navigationController.viewControllers.firstObject];
+    [self.navigationController setViewControllers:[array copy] animated:YES];
 }
 
 @end
