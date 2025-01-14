@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.0.9
+1. YYNavigation发布0.3.3版本
+2. 添加导航栏布局刷新功能，用于不想自定义，但又需要调整导航栏UI的情况
+
 ##Version --- 3.0.8
 1. YYNavigation发布0.3.2版本
 2. 修复setViewControllers时的问题

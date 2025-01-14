@@ -58,7 +58,8 @@
                       @"全屏侧滑返回",
                       @"无侧滑返回",
                       @"一次性返回多个界面",
-                      @"设置本界面的文本字体"];
+                      @"设置本界面的文本字体",
+                      @"导航栏重新布局"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableView.delegate = self;

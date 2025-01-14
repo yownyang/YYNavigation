@@ -159,6 +159,30 @@
     } else if (selectIndex == 18) {
         self.yy_navigationItem.title = @"设置本界面的文本字体";
         self.yy_navigationItem.textFont = [UIFont boldSystemFontOfSize:22];
+    } else if (selectIndex == 19) {
+        self.yy_navigationItem.title = @"导航栏重新布局";
+        @weakify(self);
+        YYNavigationBarButton *refreshButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"home_qa"] title:@"点击刷新" handler:^(UIButton *sender) {
+            @strongify(self);
+            [self.yy_navigationItem refreshSubLayout];
+        }];
+        
+        self.yy_navigationItem.rightButtons = @[refreshButton];
+        
+        // 这部分代码对按钮的属性进行了修改，点击按钮布局会进行刷新
+        // 修改文本大小
+        refreshButton.titleLabel.font = [UIFont systemFontOfSize:10];
+        // 将按钮调整为图片在上，文本在下
+        CGFloat imageWith = refreshButton.imageView.frame.size.width;
+        CGFloat imageHeight = refreshButton.imageView.frame.size.height;
+        CGFloat labelWidth = refreshButton.titleLabel.intrinsicContentSize.width;
+        CGFloat labelHeight = refreshButton.titleLabel.intrinsicContentSize.height;
+        UIEdgeInsets imageEdgeInsets = UIEdgeInsetsMake(-labelHeight-3/2.0, 0, 0, -labelWidth);
+        UIEdgeInsets labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, -imageHeight-3/2.0, 0);
+        refreshButton.titleEdgeInsets = labelEdgeInsets;
+        refreshButton.imageEdgeInsets = imageEdgeInsets;
+        // 因为图片上文本下的时候，button的宽度还是文本+图片，所以要手动设置下
+        refreshButton.width = imageWith > labelWidth ? imageWith : labelWidth;
     }
 }
 
