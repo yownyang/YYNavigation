@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.2
+1. YYNavigation发布0.3.6版本
+2. 修复了图片未设置渲染色时的bug，添加了图片渲染色的示例
+
 ##Version --- 3.1.1
 1. YYNavigation发布0.3.5版本
 2. textColor管理返回按钮，标题，左侧按钮集合，右侧按钮集合的文本颜色

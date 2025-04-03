@@ -183,6 +183,16 @@
         refreshButton.imageEdgeInsets = imageEdgeInsets;
         // 因为图片上文本下的时候，button的宽度还是文本+图片，所以要手动设置下
         refreshButton.width = imageWith > labelWidth ? imageWith : labelWidth;
+    } else if (selectIndex == 20) {
+        self.yy_navigationItem.title = @"修改图片颜色但不影响文本";
+        @weakify(self);
+        YYNavigationBarButton *refreshButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"home_qa"] title:@"恢复" handler:^(UIButton *sender) {
+            @strongify(self);
+            self.yy_navigationItem.buttonImageColor = [UIColor clearColor];
+        }];
+        
+        self.yy_navigationItem.rightButtons = @[refreshButton];
+        self.yy_navigationItem.buttonImageColor = [UIColor redColor];
     }
 }
 

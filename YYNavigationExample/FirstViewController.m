@@ -59,7 +59,8 @@
                       @"无侧滑返回",
                       @"一次性返回多个界面",
                       @"设置本界面的文本字体",
-                      @"导航栏重新布局"];
+                      @"导航栏重新布局",
+                      @"修改图片颜色但不影响文本"];
     
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero];
     self.tableView.delegate = self;
