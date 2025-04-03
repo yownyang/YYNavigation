@@ -2,6 +2,16 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.1
+1. YYNavigation发布0.3.5版本
+2. textColor管理返回按钮，标题，左侧按钮集合，右侧按钮集合的文本颜色
+3. buttonImageColor管理返回按钮，左侧按钮集合，右侧按钮集合的图片颜色
+
+##Version --- 3.1.0
+1. YYNavigation发布0.3.4版本
+2. 新加buttonImageColor用于控制左右按钮集合的图片颜色，textColor影响范围发生了变化
+3. 设置titleView时，返回按钮一并移除，便于布局
+
 ##Version --- 3.0.9
 1. YYNavigation发布0.3.3版本
 2. 添加导航栏布局刷新功能，用于不想自定义，但又需要调整导航栏UI的情况
