@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.3
+1. YYNavigation发布0.3.7版本
+2. 修复了在push未结束时，就进行侧滑返回，导致崩溃的问题
+
 ##Version --- 3.1.2
 1. YYNavigation发布0.3.6版本
 2. 修复了图片未设置渲染色时的bug，添加了图片渲染色的示例
