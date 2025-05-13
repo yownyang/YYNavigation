@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.5
+1. YYNavigation发布0.3.9版本
+2. 修复了连续push和pop时导航栏问题
+
 ##Version --- 3.1.4
 1. YYNavigation发布0.3.8版本
 2. 修复了先设置按钮颜色不生效的问题

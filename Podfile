@@ -3,7 +3,7 @@
 platform :ios, '12.0'
 
 target 'YYNavigationExample' do
-   pod 'YYNavigation', '0.3.8'
+   pod 'YYNavigation', '0.3.9'
    pod 'Masonry'
 #   pod 'YYNavigation', :path=>'~/Downloads/yynavigation/YYNavigation.podspec'
 end
