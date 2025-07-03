@@ -89,8 +89,9 @@
     } else if (selectIndex == 7) {
         
         self.yy_navigationItem.title = @"重写返回按钮";
+        @weakify(self);
         self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"app_back"] title:@"返回" handler:^(UIButton *sender) {
-            
+            @strongify(self);
             [self.navigationController popViewControllerAnimated:YES];
         }];
         
@@ -115,14 +116,14 @@
     } else if (selectIndex == 12) {
         
         self.yy_navigationItem.title = @"自定义左按钮集合";
-
+        @weakify(self);
         YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"left1" handler:^(UIButton *sender) {
-        
+            @strongify(self);
             [self.navigationController popViewControllerAnimated:YES];
         }];
         
         YYNavigationBarButton *b2 = [YYNavigationBarButton buttonWithTitle:@"left2" handler:^(UIButton *sender) {
-        
+            @strongify(self);
             self.yy_navigationItem.title = @"自定义左按钮2";
         }];
         
@@ -131,14 +132,14 @@
     } else if (selectIndex == 13) {
         
         self.yy_navigationItem.title = @"自定义右按钮集合";
-
+        @weakify(self);
         YYNavigationBarButton *b3 = [YYNavigationBarButton buttonWithTitle:@"right1" handler:^(UIButton *sender) {
-            
+            @strongify(self);
             self.yy_navigationItem.title = @"自定义右按钮1";
         }];
         
         YYNavigationBarButton *b4 = [YYNavigationBarButton buttonWithTitle:@"right2" handler:^(UIButton *sender) {
-            
+            @strongify(self);
             self.yy_navigationItem.title = @"自定义右按钮2";
         }];
         

@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.6
+1. YYNavigation发布0.4.0版本
+2. 修复了部分情况下野指针的问题
+
 ##Version --- 3.1.5
 1. YYNavigation发布0.3.9版本
 2. 修复了连续push和pop时导航栏问题

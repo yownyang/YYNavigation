@@ -1,18 +1,18 @@
 PODS:
   - Masonry (1.1.0)
-  - YYNavigation (0.3.8):
-    - YYNavigation/YYNavigationAnimation (= 0.3.8)
-    - YYNavigation/YYNavigationBase (= 0.3.8)
-    - YYNavigation/YYNavigationCategory (= 0.3.8)
-    - YYNavigation/YYNavigationMacro (= 0.3.8)
-  - YYNavigation/YYNavigationAnimation (0.3.8):
+  - YYNavigation (0.3.9):
+    - YYNavigation/YYNavigationAnimation (= 0.3.9)
+    - YYNavigation/YYNavigationBase (= 0.3.9)
+    - YYNavigation/YYNavigationCategory (= 0.3.9)
+    - YYNavigation/YYNavigationMacro (= 0.3.9)
+  - YYNavigation/YYNavigationAnimation (0.3.9):
     - YYNavigation/YYNavigationCategory
-  - YYNavigation/YYNavigationBase (0.3.8):
+  - YYNavigation/YYNavigationBase (0.3.9):
     - YYNavigation/YYNavigationAnimation
     - YYNavigation/YYNavigationCategory
     - YYNavigation/YYNavigationMacro
-  - YYNavigation/YYNavigationCategory (0.3.8)
-  - YYNavigation/YYNavigationMacro (0.3.8)
+  - YYNavigation/YYNavigationCategory (0.3.9)
+  - YYNavigation/YYNavigationMacro (0.3.9)
 
 DEPENDENCIES:
   - Masonry
@@ -28,8 +28,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  YYNavigation: 2224a1e4b4bfa06d69da5216c9f25ca2e64505f4
+  YYNavigation: a6331ccd8119903abc830942fa61dfa5f3830285
 
-PODFILE CHECKSUM: 32d37946a6ea77579b1a8c150b686350cbcf2e5d
+PODFILE CHECKSUM: 3c7cf21c7a12f4b45f1f539065a5a456af245427
 
 COCOAPODS: 1.16.2
