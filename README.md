@@ -2,6 +2,11 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.7
+1. YYNavigation发布0.4.1版本
+2. 修复了持有VC无法释放的问题
+3. 修复了状态栏隐藏时的导航栏高度问题
+
 ##Version --- 3.1.6
 1. YYNavigation发布0.4.0版本
 2. 修复了部分情况下野指针的问题

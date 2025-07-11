@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0742C4B827C4901F006C61B5 /* UIImage+YYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */; };
 		078B7C3E2B71F93700566458 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078B7C3D2B71F93700566458 /* FourthViewController.m */; };
-		0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */; };
 		DD1955AD1DD8E06F00FD3582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD1955AB1DD8E06F00FD3582 /* Main.storyboard */; };
 		DD1955B51DD8E08400FD3582 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1955B01DD8E08400FD3582 /* main.m */; };
 		DD1955B71DD8E08F00FD3582 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD1955B61DD8E08F00FD3582 /* Assets.xcassets */; };
@@ -24,9 +23,6 @@
 		0742C4B727C4901F006C61B5 /* UIImage+YYHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+YYHelper.m"; path = "Category/UIImage+YYHelper.m"; sourceTree = "<group>"; };
 		078B7C3C2B71F93700566458 /* FourthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
 		078B7C3D2B71F93700566458 /* FourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
-		3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-YYNavigationExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.debug.xcconfig"; sourceTree = "<group>"; };
-		BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YYNavigationExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample.release.xcconfig"; sourceTree = "<group>"; };
 		DD1847711D51C61A00E1C1FA /* YYNavigationExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YYNavigationExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD1955AC1DD8E06F00FD3582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = YYNavigationExample/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DD1955AF1DD8E08400FD3582 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = YYNavigationExample/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -47,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A34B2F264F3E908A34A4FE7 /* libPods-YYNavigationExample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +58,11 @@
 			name = Category;
 			sourceTree = "<group>";
 		};
-		CC5DCCBEDE74565C8786DA9B /* Frameworks */ = {
+		3D9BF1361EF8C0CCB374C849 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3FCB7F1C538A2840563C2044 /* libPods-YYNavigationExample.a */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		DD1847681D51C61A00E1C1FA = {
@@ -76,8 +70,7 @@
 			children = (
 				DD1847731D51C61A00E1C1FA /* YYNavigationExample */,
 				DD1847721D51C61A00E1C1FA /* Products */,
-				EF6F4741E4B7FD9E0D1A80E5 /* Pods */,
-				CC5DCCBEDE74565C8786DA9B /* Frameworks */,
+				3D9BF1361EF8C0CCB374C849 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,15 +112,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		EF6F4741E4B7FD9E0D1A80E5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */,
-				BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,11 +119,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD18478B1D51C61A00E1C1FA /* Build configuration list for PBXNativeTarget "YYNavigationExample" */;
 			buildPhases = (
-				3130DC2F02177341D0E88ABD /* [CP] Check Pods Manifest.lock */,
 				DD18476D1D51C61A00E1C1FA /* Sources */,
 				DD18476E1D51C61A00E1C1FA /* Frameworks */,
 				DD18476F1D51C61A00E1C1FA /* Resources */,
-				ADB211CAF6852667CE8E60F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,44 +178,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3130DC2F02177341D0E88ABD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YYNavigationExample-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADB211CAF6852667CE8E60F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YYNavigationExample/Pods-YYNavigationExample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD18476D1D51C61A00E1C1FA /* Sources */ = {
@@ -364,7 +308,6 @@
 		};
 		DD18478C1D51C61A00E1C1FA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE3A322A7DDCE726233FC175 /* Pods-YYNavigationExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -393,7 +336,6 @@
 		};
 		DD18478D1D51C61A00E1C1FA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEA0C048AE0DE50FF925779E /* Pods-YYNavigationExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

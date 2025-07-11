@@ -20,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UIImage *bgImage = [UIImage loadGradientImageFromGradientColors:@[[UIColor yellowColor], [UIColor redColor], [UIColor greenColor]] direction:kYYGradientDirectionLeft size:CGSizeMake(YYScreenWidth, YYNaviBarHeight)];
+    UIImage *bgImage = [UIImage loadGradientImageFromGradientColors:@[[UIColor yellowColor], [UIColor redColor], [UIColor greenColor]] direction:kYYGradientDirectionLeft size:CGSizeMake(YYScreenWidth, [NSObject yy_naviBarHeight])];
     [[YYNavigationBar appearance] setNaviBgImage:bgImage];
     [[YYNavigationItem appearance] setTextColor:[UIColor whiteColor]];
     [[YYNavigationItem appearance] setBackImage:[UIImage imageNamed:@"app_back"]];

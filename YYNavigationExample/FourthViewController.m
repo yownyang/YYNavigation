@@ -36,7 +36,7 @@
         make.right.mas_equalTo(-22);
         make.height.mas_equalTo(50);
         make.centerX.mas_equalTo(0);
-        make.top.mas_equalTo(YYNaviBarHeight + 100);
+        make.top.mas_equalTo([NSObject yy_naviBarHeight] + 100);
     }];
     
     UIButton *popToViewControllerButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -51,7 +51,7 @@
         make.right.mas_equalTo(-22);
         make.height.mas_equalTo(50);
         make.centerX.mas_equalTo(0);
-        make.top.mas_equalTo(YYNaviBarHeight + 200);
+        make.top.mas_equalTo([NSObject yy_naviBarHeight] + 200);
     }];
     
     UIButton *setViewControllersButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -66,7 +66,7 @@
         make.right.mas_equalTo(-22);
         make.height.mas_equalTo(50);
         make.centerX.mas_equalTo(0);
-        make.top.mas_equalTo(YYNaviBarHeight + 300);
+        make.top.mas_equalTo([NSObject yy_naviBarHeight] + 300);
     }];
 }
 

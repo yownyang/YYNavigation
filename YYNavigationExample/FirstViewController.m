@@ -68,33 +68,12 @@
     [self.view addSubview:self.tableView];
 }
 
-//// 这个是使用Masonry布局。系统不会考虑自定义导航栏占得位置，这个44是自定义导航栏的实际高度，所以要向下平移44
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        if (@available(iOS 11.0, *)) {
-//            make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop).offset(44);
-//            make.bottom.mas_equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-//            make.left.mas_equalTo(self.view.mas_safeAreaLayoutGuideLeft);
-//            make.right.mas_equalTo(self.view.mas_safeAreaLayoutGuideRight);
-//        } else {
-//            make.top.mas_equalTo(self.view.mas_top).offset(44);
-//            make.bottom.mas_equalTo(self.view.mas_bottom);
-//            make.left.mas_equalTo(self.view.mas_left);
-//            make.right.mas_equalTo(self.view.mas_right);
-//        }
-//    }];
-//}
-
-// 这个是使用Frame布局。系统不会考虑自定义导航栏占得位置，44是自定义导航栏的实际高度，所以要向下平移44
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    if (@available(iOS 11.0, *)) {
-        CGRect safeAreaFrame = self.view.safeAreaLayoutGuide.layoutFrame;
-        self.tableView.frame = CGRectMake(0, safeAreaFrame.origin.y + 44, safeAreaFrame.size.width, safeAreaFrame.size.height - 44);
-    } else {
-        self.tableView.frame = CGRectMake(0, YYNaviBarHeight, self.view.width, self.view.height - YYNaviBarHeight);
-    }
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo([NSObject yy_naviBarHeight]);
+        make.leading.trailing.bottom.mas_equalTo(0);
+    }];
 }
 
 #pragma mark - TableView
