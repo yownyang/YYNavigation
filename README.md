@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 3.1.8
+1. YYNavigation发布0.4.3版本
+2. 强制竖屏限制
+
 ##Version --- 3.1.7
 1. YYNavigation发布0.4.1版本
 2. 修复了持有VC无法释放的问题
