@@ -23,11 +23,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     self.yy_navigationItem.title = @"ThirdViewController";
+    @weakify(self);
     self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
+        @strongify(self);
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
-    @weakify(self);
     YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"跳转测试" handler:^(UIButton *sender) {
         @strongify(self);
         SecondViewController *sc = [SecondViewController new];
