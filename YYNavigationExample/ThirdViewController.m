@@ -7,6 +7,7 @@
 //
 
 #import "ThirdViewController.h"
+#import "SecondViewController.h"
 
 #import "YYNavigation.h"
 
@@ -25,6 +26,16 @@
     self.yy_navigationItem.backButton = [YYNavigationBarButton buttonWithImage:[UIImage imageNamed:@"back"] title:@"返回" handler:^(UIButton *sender) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
+    
+    @weakify(self);
+    YYNavigationBarButton *b1 = [YYNavigationBarButton buttonWithTitle:@"跳转测试" handler:^(UIButton *sender) {
+        @strongify(self);
+        SecondViewController *sc = [SecondViewController new];
+        sc.selectIndex = 0;
+        sc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:sc animated:YES];
+    }];
+    self.yy_navigationItem.rightButtons = @[b1];
 }
 
 - (void)didReceiveMemoryWarning {
