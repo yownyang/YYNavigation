@@ -1,36 +1,34 @@
 PODS:
   - Masonry (1.1.0)
-  - YYNavigation (0.4.3):
-    - YYNavigation/YYNavigationAnimation (= 0.4.3)
-    - YYNavigation/YYNavigationBase (= 0.4.3)
-    - YYNavigation/YYNavigationCategory (= 0.4.3)
-    - YYNavigation/YYNavigationMacro (= 0.4.3)
-  - YYNavigation/YYNavigationAnimation (0.4.3):
+  - YYNavigation (0.4.4):
+    - YYNavigation/YYNavigationAnimation (= 0.4.4)
+    - YYNavigation/YYNavigationBase (= 0.4.4)
+    - YYNavigation/YYNavigationCategory (= 0.4.4)
+    - YYNavigation/YYNavigationMacro (= 0.4.4)
+  - YYNavigation/YYNavigationAnimation (0.4.4):
     - YYNavigation/YYNavigationCategory
-  - YYNavigation/YYNavigationBase (0.4.3):
+  - YYNavigation/YYNavigationBase (0.4.4):
     - YYNavigation/YYNavigationAnimation
     - YYNavigation/YYNavigationCategory
     - YYNavigation/YYNavigationMacro
-  - YYNavigation/YYNavigationCategory (0.4.3):
+  - YYNavigation/YYNavigationCategory (0.4.4):
     - YYNavigation/YYNavigationMacro
-  - YYNavigation/YYNavigationMacro (0.4.3)
+  - YYNavigation/YYNavigationMacro (0.4.4)
 
 DEPENDENCIES:
   - Masonry
-  - YYNavigation (from `~/Downloads/yynavigation/YYNavigation.podspec`)
+  - YYNavigation (= 0.4.4)
 
 SPEC REPOS:
   https://gitee.com/mirrors/CocoaPods-Specs.git:
     - Masonry
-
-EXTERNAL SOURCES:
-  YYNavigation:
-    :path: "~/Downloads/yynavigation/YYNavigation.podspec"
+  trunk:
+    - YYNavigation
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  YYNavigation: a18b4688d2b37603dcd811e35c955cf15503083d
+  YYNavigation: 89ea79b9c8122e6aa0776e6020559563a75ed3b0
 
-PODFILE CHECKSUM: b5b98d5f7a1fad62abd179094337e8f649a2c5d3
+PODFILE CHECKSUM: 393cf3153ddae6b59313726e6aaab18272a393aa
 
 COCOAPODS: 1.16.2
