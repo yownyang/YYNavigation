@@ -3,7 +3,11 @@ YYNavigation
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
 ##Version --- 0.4.5
-1. 自行维护viewControllerS，不依赖系统的，解决bug
+1. 解决第一个页面会显示返回按钮的bug
+2. 发布了0.4.6
+
+##Version --- 0.4.5
+1. 自行维护viewControllers，不依赖系统的，解决bug
 2. 发布了0.4.5
 
 ##Version --- 0.4.4
