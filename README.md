@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 0.4.9
+1. 当设备背景色为透明时，会有黑色区块
+2. 发布了0.4.9
+
 ##Version --- 0.4.8
 1. push时禁用侧滑
 2. 发布了0.4.8
