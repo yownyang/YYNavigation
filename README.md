@@ -2,6 +2,10 @@ YYNavigation
 ------
 Blog: [https://yownyang.github.io/](https://yownyang.github.io/)
 
+##Version --- 0.5.1
+  1. 兼容iOS 27
+
+
 ##Version --- 0.5.0
 1. 兼容iOS 26Push时，生命周期的问题
 2. 发布了0.5.0
